@@ -1,0 +1,60 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Zenity Dark Theme Colors */
+    --background: 219 32% 10%; /* #1f1149 - main dark background */
+    --foreground: 0 0% 98%; /* white text */
+    --card: 230 25% 15%; /* darker cards */
+    --card-foreground: 0 0% 98%;
+    --popover: 219 32% 10%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 262 83% 58%; /* #973ce5 - purple primary */
+    --primary-foreground: 0 0% 98%;
+    --secondary: 226 32% 25%; /* #413371 - secondary purple */
+    --secondary-foreground: 0 0% 98%;
+    --muted: 228 25% 35%;
+    --muted-foreground: 220 15% 65%;
+    --accent: 246 49% 52%; /* #6952aa - accent purple */
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 228 25% 25%;
+    --input: 228 25% 25%;
+    --ring: 262 83% 58%;
+    --radius: 0.5rem;
+
+    /* Custom Zenity colors */
+    --zenity-navy: 230 64% 8%; /* #050425 - darkest navy */
+    --zenity-purple-dark: 219 32% 10%; /* #1f1149 - dark purple */
+    --zenity-purple-mid: 226 32% 25%; /* #413371 - mid purple */
+    --zenity-purple-accent: 246 49% 52%; /* #6952aa - accent purple */
+    --zenity-purple-bright: 262 83% 58%; /* #973ce5 - bright purple */
+    --zenity-blue: 201 65% 60%; /* #72adce - blue accent */
+    --zenity-gray: 224 8% 30%; /* #474150 - text gray */
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-[hsl(var(--zenity-navy))] text-foreground;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  }
+
+  .gradient-text {
+    @apply bg-gradient-to-r from-[hsl(var(--zenity-blue))] to-[hsl(var(--zenity-purple-bright))] bg-clip-text text-transparent;
+  }
+
+  .gradient-bg-main {
+    background: linear-gradient(135deg, hsl(var(--zenity-navy)) 0%, hsl(var(--zenity-purple-dark)) 50%, hsl(var(--zenity-purple-mid)) 100%);
+  }
+
+  .gradient-bg-section {
+    background: linear-gradient(180deg, hsl(var(--zenity-purple-dark)) 0%, hsl(var(--zenity-navy)) 100%);
+  }
+}
