@@ -38,14 +38,15 @@ const HeroSection = () => {
       <div className="container mx-auto px-6 py-24 lg:py-32 relative z-10">
         <div className="max-w-4xl">
           <h1 className="text-5xl lg:text-7xl font-bold text-white leading-tight mb-6">
-            Zenity-ciso repo{" "}
+          Securing AI Agents{" "}
             <span className="gradient-text">
               Everywhere
             </span>
           </h1>
 
           <p className="text-xl lg:text-2xl text-gray-300 mb-8 max-w-2xl leading-relaxed">
-            Security and governance, from buildtime to runtime, to enable business-built innovation
+          Building a robust security foundation for Zenity's innovative future.
+          <p>A strategic security partnership to enable enterprise trust and accelerate growth.</p>
           </p>
 
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-6">
@@ -58,10 +59,11 @@ const HeroSection = () => {
             <Button
               size="lg"
               variant="outline"
-              className="border-[hsl(var(--zenity-purple-mid))] text-white hover:bg-[hsl(var(--zenity-purple-mid))] font-medium px-8 py-3"
+              className="bg-white text-[hsl(var(--zenity-navy))] hover:bg-gray-100 font-medium px-8 py-3"
             >
-              See Zenity in Action
+              See Vikas in Action
             </Button>
+            
           </div>
         </div>
       </div>

@@ -3,7 +3,7 @@ import Header from './components/Header'
 import HeroSection from './components/HeroSection'
 import ProblemsSection from './components/ProblemsSection'
 import PlatformSection from './components/PlatformSection'
-import FeaturesSection from './components/FeaturesSection'
+import ExecutiveSummarySection from './components/ExecutiveSummarySection'
 import TestimonialsSection from './components/TestimonialsSection'
 import ZenityLabsSection from './components/ZenityLabsSection'
 import ExpertValidationSection from './components/ExpertValidationSection'
@@ -25,7 +25,7 @@ function App() {
                 <HeroSection />
                 <ProblemsSection />
                 <PlatformSection />
-                <FeaturesSection />
+                <ExecutiveSummarySection />
                 <TestimonialsSection />
                 <ZenityLabsSection />
                 <ExpertValidationSection />

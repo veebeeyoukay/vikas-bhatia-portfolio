@@ -11,30 +11,44 @@ import { ChevronDown } from "lucide-react"
 
 const Header = () => {
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-[hsl(var(--zenity-navy))]/95 backdrop-blur-sm border-b border-[hsl(var(--zenity-purple-mid))]/30">
+    <header className="fixed top-0 left-0 right-0 z-50 bg-black/95 backdrop-blur-sm border-b border-[hsl(var(--zenity-purple-mid))]/30">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center">
-            <img
-              src="https://ext.same-assets.com/2030829628/3546308668.svg"
-              alt="Zenity"
-              className="h-8 w-auto"
-            />
+            <a href="/">
+              <img
+                src="https://ext.same-assets.com/2030829628/3546308668.svg"
+                alt="Zenity"
+                className="h-8 w-auto"
+              />
+            </a>
           </div>
 
           {/* Navigation */}
-          <NavigationMenu className="hidden lg:flex">
+          <NavigationMenu>
             <NavigationMenuList className="space-x-8">
               <NavigationMenuItem>
-                <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors">
-                  Agentic AI
+                <NavigationMenuLink href="/#why-now" className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium">
+                  Why now?
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink href="/#executive-summary" className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium">
+                  Executive Summary
+                </NavigationMenuLink>
+              </NavigationMenuItem>
+
+              <NavigationMenuItem>
+                <NavigationMenuLink href="/#leadership-objectives" className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium">
+                  Leadership Objectives
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
               <NavigationMenuItem>
                 <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors">
-                  Platform
+                  Use Cases
                 </NavigationMenuLink>
               </NavigationMenuItem>
 
