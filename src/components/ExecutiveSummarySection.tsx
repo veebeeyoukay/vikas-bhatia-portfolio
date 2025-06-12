@@ -7,7 +7,7 @@ const ExecutiveSummarySection = () => {
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
             Zenity will lead if we {" "}
-            <span className="gradient-text">continue to.</span>{" "}
+            <span className="gradient-text">continue to</span>{" "}
             innovation at the speed of AI and convey trust to all stakeholders.
           </h2>
 

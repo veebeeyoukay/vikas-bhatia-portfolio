@@ -267,16 +267,25 @@ const Footer: React.FC<FooterProps> = ({ logoText = "Vikas Bhatia", logoImage })
             <FooterHeading>Quick Links</FooterHeading>
             <FooterLinks>
               <FooterLink>
-                <a href="#experience">Experience</a>
+                <a href="/#executive-summary">Executive Summary</a>
               </FooterLink>
               <FooterLink>
-                <a href="#publications">Publications</a>
+                <a href="/#zenity-history">Zenity History</a>
               </FooterLink>
               <FooterLink>
-                <a href="#speaking">Speaking Engagements</a>
+                <a href="/#business-objectives">Business Objectives</a>
               </FooterLink>
               <FooterLink>
-                <a href="#skills">Skills & Expertise</a>
+                <a href="/#leadership-objectives">Leadership Objectives</a>
+              </FooterLink>
+              <FooterLink>
+                <a href="/#zenity-ciso">Zenity CISO</a>
+              </FooterLink>
+              <FooterLink>
+                <a href="/#vikas-ciso-plan">Vikas's Zenity CISO Plan</a>
+              </FooterLink>
+              <FooterLink>
+                <a href="/#about-vikas">About Vikas</a>
               </FooterLink>
             </FooterLinks>
           </FooterColumn>
