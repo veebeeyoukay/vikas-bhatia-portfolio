@@ -10,9 +10,9 @@ interface TimelineEvent {
 
 const timelineEvents: TimelineEvent[] = [
   {
-    date: "April 2021",
+    date: "2021",
     title: "Company Founded",
-    description: "Zenity was founded in Tel Aviv-Yafo, Israel by Ben Kliger (CEO) and Michael Bargury (CTO), both former Microsoft leaders.",
+    description: "Zenity was founded in April 2021 in Tel Aviv-Yafo, Israel by Ben Kliger (CEO) and Michael Bargury (CTO), both former Microsoft leaders.",
     icon: <Calendar className="h-6 w-6" />
   },
   {

@@ -260,7 +260,7 @@ const HeroSection = () => {
               className="bg-white text-[hsl(var(--zenity-navy))] hover:bg-gray-100 font-medium px-8 py-3"
               onClick={() => navigate('/countdown')}
             >
-              Imagine life without a CISO
+              Play the Imagine life without a CISO game here! 
             </Button>
             <Button
               size="lg"
