@@ -1,3 +1,4 @@
+import React from 'react'
 import Header from '@/components/Header'
 import HeroSection from '@/components/HeroSection'
 import WebinarBanner from '@/components/WebinarBanner'
@@ -9,6 +10,7 @@ import ExpertValidationSection from '@/components/ExpertValidationSection'
 import BlogsSection from '@/components/BlogsSection'
 import FinalCTASection from '@/components/FinalCTASection'
 import Footer from '@/components/Footer'
+import PlatformSection from '@/components/PlatformSection'
 
 export default function Home() {
   return (
