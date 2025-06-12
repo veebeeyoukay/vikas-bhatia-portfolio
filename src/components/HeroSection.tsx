@@ -9,12 +9,12 @@ const HeroSection = () => {
     <section className="relative gradient-bg-main overflow-hidden">
       {/* Orbital Animation */}
       <svg 
-        width="600" 
-        height="600" 
+        width="800" 
+        height="1000" 
         viewBox="0 0 1080 1406" 
         fill="none" 
         xmlns="http://www.w3.org/2000/svg" 
-        className="absolute top-1/2 left-[48%] -translate-x-1/3 -translate-y-1/2 w-[400px] md:w-[500px] lg:w-[600px] h-auto overflow-visible pointer-events-none opacity-40"
+        className="absolute top-[70%] left-[60%] -translate-x-1/3 -translate-y-1/2 w-[900px] md:w-[900px] lg:w-[900px] h-auto overflow-visible pointer-events-none opacity-90"
       >
         <defs>
           <linearGradient id="securityTail" gradientUnits="userSpaceOnUse" x1="30" y1="0" x2="-30" y2="0">
