@@ -1,16 +1,15 @@
 import { Routes, Route } from 'react-router-dom'
 import Header from './components/Header'
 import HeroSection from './components/HeroSection'
-import ProblemsSection from './components/ProblemsSection'
-import PlatformSection from './components/PlatformSection'
 import ExecutiveSummarySection from './components/ExecutiveSummarySection'
-import TestimonialsSection from './components/TestimonialsSection'
-import ZenityLabsSection from './components/ZenityLabsSection'
-import ExpertValidationSection from './components/ExpertValidationSection'
-import BlogsSection from './components/BlogsSection'
-import FinalCTASection from './components/FinalCTASection'
+import ZenityHistorySection from './components/ZenityHistorySection'
+import BusinessObjectivesSection from './components/BusinessObjectivesSection'
+import LeadershipObjectivesSection from './components/LeadershipObjectivesSection'
+import ZenityCISOSection from './components/ZenityCISOSection'
+import VikasCISOPlanSection from './components/VikasCISOPlanSection'
+import AboutVikasSection from './components/AboutVikasSection'
 import Footer from './components/Footer'
-import WebinarBanner from './components/WebinarBanner'
+import CountdownPage from './components/CountdownPage'
 
 function App() {
   return (
@@ -23,18 +22,17 @@ function App() {
             element={
               <>
                 <HeroSection />
-                <ProblemsSection />
-                <PlatformSection />
                 <ExecutiveSummarySection />
-                <TestimonialsSection />
-                <ZenityLabsSection />
-                <ExpertValidationSection />
-                <BlogsSection />
-                <FinalCTASection />
-                <WebinarBanner />
+                <ZenityHistorySection />
+                <BusinessObjectivesSection />
+                <LeadershipObjectivesSection />
+                <ZenityCISOSection />
+                <VikasCISOPlanSection />
+                <AboutVikasSection />
               </>
             }
           />
+          <Route path="/countdown" element={<CountdownPage />} />
         </Routes>
       </main>
       <Footer />

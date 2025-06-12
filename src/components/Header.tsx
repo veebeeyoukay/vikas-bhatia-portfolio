@@ -1,13 +1,20 @@
 import { Button } from "@/components/ui/button"
 import {
   NavigationMenu,
-  NavigationMenuContent,
-  NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
-  NavigationMenuTrigger,
+  NavigationMenuItem,
+  NavigationMenuLink
 } from "@/components/ui/navigation-menu"
-import { ChevronDown } from "lucide-react"
+
+const NAV_ITEMS = [
+  { label: "Executive Summary", href: "/#executive-summary" },
+  { label: "Zenity History", href: "/#zenity-history" },
+  { label: "Business Objectives", href: "/#business-objectives" },
+  { label: "Leadership Objectives", href: "/#leadership-objectives" },
+  { label: "Zenity CISO", href: "/#zenity-ciso" },
+  { label: "Vikas's Zenity CISO Plan", href: "/#vikas-ciso-plan" },
+  { label: "About Vikas", href: "/#about-vikas" }
+];
 
 const Header = () => {
   return (
@@ -28,117 +35,23 @@ const Header = () => {
           {/* Navigation */}
           <NavigationMenu>
             <NavigationMenuList className="space-x-8">
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/#why-now" className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium">
-                  Why now?
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/#executive-summary" className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium">
-                  Executive Summary
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink href="/#leadership-objectives" className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium">
-                  Leadership Objectives
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors">
-                  Use Cases
-                </NavigationMenuLink>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors bg-transparent">
-                  Use Cases
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="bg-[hsl(var(--zenity-purple-dark))] border border-[hsl(var(--zenity-purple-mid))] rounded-lg p-6 w-96">
-                    <div className="space-y-4">
-                      <div>
-                        <h4 className="text-sm font-medium text-[hsl(var(--zenity-blue))] mb-2">By Business Need</h4>
-                        <div className="grid grid-cols-1 gap-2">
-                          <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Generative AI</NavigationMenuLink>
-                          <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Citizen Development</NavigationMenuLink>
-                          <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Security</NavigationMenuLink>
-                          <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Compliance</NavigationMenuLink>
-                        </div>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-medium text-[hsl(var(--zenity-blue))] mb-2">By Platform</h4>
-                        <div className="grid grid-cols-1 gap-2">
-                          <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Microsoft 365 Copilot</NavigationMenuLink>
-                          <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Power Platform</NavigationMenuLink>
-                          <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Salesforce</NavigationMenuLink>
-                          <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">ChatGPT Enterprise</NavigationMenuLink>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors bg-transparent">
-                  Resources
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="bg-[hsl(var(--zenity-purple-dark))] border border-[hsl(var(--zenity-purple-mid))] rounded-lg p-6 w-80">
-                    <div className="grid grid-cols-1 gap-2">
-                      <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Blogs</NavigationMenuLink>
-                      <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Events</NavigationMenuLink>
-                      <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">White Papers</NavigationMenuLink>
-                      <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Case Studies</NavigationMenuLink>
-                      <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Webinars</NavigationMenuLink>
-                    </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors bg-transparent">
-                  Company
-                  <ChevronDown className="ml-1 h-4 w-4" />
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="bg-[hsl(var(--zenity-purple-dark))] border border-[hsl(var(--zenity-purple-mid))] rounded-lg p-6 w-80">
-                    <div className="grid grid-cols-1 gap-2">
-                      <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">About Us</NavigationMenuLink>
-                      <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Careers</NavigationMenuLink>
-                      <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">News</NavigationMenuLink>
-                      <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Partners</NavigationMenuLink>
-                      <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] text-sm">Contact</NavigationMenuLink>
-                    </div>
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-
-              <NavigationMenuItem>
-                <NavigationMenuLink className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors">
-                  Zenity Labs
-                </NavigationMenuLink>
-              </NavigationMenuItem>
+              {NAV_ITEMS.map((item) => (
+                <NavigationMenuItem key={item.href}>
+                  <NavigationMenuLink href={item.href} className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium">
+                    {item.label}
+                  </NavigationMenuLink>
+                </NavigationMenuItem>
+              ))}
             </NavigationMenuList>
           </NavigationMenu>
 
           {/* Action Buttons */}
           <div className="flex items-center space-x-4">
             <Button
-              variant="outline"
-              className="border-[hsl(var(--zenity-purple-mid))] text-white hover:bg-[hsl(var(--zenity-purple-mid))] hidden md:inline-flex"
-            >
-              Login
-            </Button>
-            <Button
               className="bg-[hsl(var(--zenity-purple-bright))] hover:bg-[hsl(var(--zenity-purple-accent))] text-white"
+              onClick={() => window.open('https://app.usemotion.com/meet/vikas-bhatia/JP-meeting', '_blank')}
             >
-              Book Demo
+              Schedule Meeting
             </Button>
           </div>
         </div>

@@ -2,7 +2,7 @@ import React from "react"
 
 const ExecutiveSummarySection = () => {
   return (
-    <section className="py-20 lg:py-32 gradient-bg-section">
+    <section id="executive-summary" className="py-20 lg:py-32 gradient-bg-section">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
           <h2 className="text-4xl lg:text-5xl font-bold text-white mb-6">
