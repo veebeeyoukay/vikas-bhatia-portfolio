@@ -254,7 +254,7 @@ const Footer: React.FC<FooterProps> = ({ logoText = "Vikas Bhatia", logoImage })
               <SocialLink href="https://x.com/vikasbhatiauk" target="_blank" aria-label="Twitter">
                 <FontAwesomeIcon icon={faTwitter} />
               </SocialLink>
-              <SocialLink href="https://github.com" target="_blank" aria-label="GitHub">
+              <SocialLink href="https://github.com/veebeeyoukay" target="_blank" aria-label="GitHub">
                 <FontAwesomeIcon icon={faGithub} />
               </SocialLink>
               <SocialLink href="mailto:vikasbhatiauk@gmail.com" aria-label="Email">

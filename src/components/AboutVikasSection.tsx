@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faLinkedinIn, faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faLinkedinIn, faTwitter, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope, faFileAlt } from '@fortawesome/free-solid-svg-icons';
 
 // Styled Components
@@ -494,6 +494,9 @@ const AboutVikasSection = () => {
                 </SocialLink>
                 <SocialLink href="https://x.com/vikasbhatiauk" target="_blank">
                   <FontAwesomeIcon icon={faTwitter} />
+                </SocialLink>
+                <SocialLink href="https://github.com/veebeeyoukay" target="_blank">
+                  <FontAwesomeIcon icon={faGithub} />
                 </SocialLink>
                 <SocialLink href="mailto:vikasbhatiauk@gmail.com">
                   <FontAwesomeIcon icon={faEnvelope} />
