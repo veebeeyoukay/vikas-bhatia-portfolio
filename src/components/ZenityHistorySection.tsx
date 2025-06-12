@@ -1,5 +1,5 @@
 import React from "react"
-import { ZenityHistory } from "../../components/Timeline/ZenityHistory"
+import ZenityHistory from "./Timeline/ZenityHistory"
 
 const narrative = (
   <>

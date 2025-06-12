@@ -1,9 +1,9 @@
-import { ZenityHistory } from "@/components/Timeline/ZenityHistory";
+import ZenityHistorySection from "@/components/ZenityHistorySection";
 
 export default function Home() {
   return (
     <main>
-      <ZenityHistory />
+      <ZenityHistorySection />
     </main>
   );
 } 
