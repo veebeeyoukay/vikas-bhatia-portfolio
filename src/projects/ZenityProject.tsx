@@ -1,11 +1,11 @@
 import React from 'react';
 import HeroSection from '../components/HeroSection';
 import ExecutiveSummarySection from '../components/ExecutiveSummarySection';
-import ZenityHistorySection from '../components/ZenityHistorySection';
-import BusinessObjectivesSection from '../components/BusinessObjectivesSection';
-import LeadershipObjectivesSection from '../components/LeadershipObjectivesSection';
-import ZenityCISOSection from '../components/ZenityCISOSection';
-import VikasCISOPlanSection from '../components/VikasCISOPlanSection';
+import ZenityHistorySection from './zenity/components/ZenityHistorySection';
+import BusinessObjectivesSection from './zenity/components/BusinessObjectivesSection';
+import LeadershipObjectivesSection from './zenity/components/LeadershipObjectivesSection';
+import ZenityCISOSection from './zenity/components/ZenityCISOSection';
+import VikasCISOPlanSection from './zenity/components/VikasCISOPlanSection';
 import AboutVikasSection from '../components/AboutVikasSection';
 
 const ZenityProject: React.FC = () => {
