@@ -1,5 +1,5 @@
 import React from 'react';
-import HeroSection from '../components/HeroSection';
+import HeroSection from './zenity/components/ZenityHeroSection';
 import ExecutiveSummarySection from './zenity/components/ExecutiveSummarySection';
 import ZenityHistorySection from './zenity/components/ZenityHistorySection';
 import BusinessObjectivesSection from './zenity/components/BusinessObjectivesSection';
