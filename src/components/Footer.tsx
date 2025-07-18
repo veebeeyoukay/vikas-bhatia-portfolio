@@ -78,19 +78,19 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/about" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/#about" className="text-gray-300 hover:text-white transition-colors">
                   About
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/expertise" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/#expertise" className="text-gray-300 hover:text-white transition-colors">
                   Expertise
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors">
                   Services
-                </Link>
+                </a>
               </li>
               <li>
                 <Link to="/projects" className="text-gray-300 hover:text-white transition-colors">
@@ -105,29 +105,29 @@ const Footer: React.FC = () => {
             <h3 className="text-lg font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors">
                   Cybersecurity Strategy
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors">
                   Security Architecture
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors">
                   Digital Transformation
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors">
                   Compliance & Governance
-                </Link>
+                </a>
               </li>
               <li>
-                <Link to="/services" className="text-gray-300 hover:text-white transition-colors">
+                <a href="/#services" className="text-gray-300 hover:text-white transition-colors">
                   Executive Coaching
-                </Link>
+                </a>
               </li>
             </ul>
           </div>

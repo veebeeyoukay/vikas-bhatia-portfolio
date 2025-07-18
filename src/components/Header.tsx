@@ -8,13 +8,13 @@ import {
 import { Link, useLocation } from "react-router-dom"
 
 const NAV_ITEMS = [
-  { label: "Home", href: "/" },
-  { label: "About", href: "/about" },
-  { label: "Expertise", href: "/expertise" },
-  { label: "Services", href: "/services" },
-  { label: "Credentials", href: "/credentials" },
+  { label: "Home", href: "#home" },
+  { label: "About", href: "#about" },
+  { label: "Expertise", href: "#expertise" },
+  { label: "Services", href: "#services" },
+  { label: "Credentials", href: "#credentials" },
   { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "/contact" }
+  { label: "Contact", href: "#contact" }
 ];
 
 const Header = () => {
@@ -43,7 +43,11 @@ const Header = () => {
                     asChild
                     className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium"
                   >
-                    <Link to={item.href}>{item.label}</Link>
+                    {item.href.startsWith('/') ? (
+                      <Link to={item.href}>{item.label}</Link>
+                    ) : (
+                      <a href={item.href}>{item.label}</a>
+                    )}
                   </NavigationMenuLink>
                 </NavigationMenuItem>
               ))}

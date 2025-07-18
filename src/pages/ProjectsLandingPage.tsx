@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom';
 const ProjectsLandingPage: React.FC = () => {
   const projects = [
     {
+      id: 'MetaFan',
+      title: 'Metafan',
+      description: 'MetaFan is the first truly social marketplace where collectors across categories discover, showcase, authenticate, and trade items within a vibrant community, powered by AI and Web3 technologies that enhance both the emotional and financial value of collections.',
+      category: 'Social Marketplace',
+      technologies: ['AI', 'Web3', 'Social Media'],
+      featured: true,
+    },
+    {
       id: 'zenity',
       title: 'Zenity CISO Strategy',
       description: 'Comprehensive cybersecurity strategy and implementation plan for Zenity, including risk assessment, compliance framework, and technology roadmap.',
@@ -88,12 +96,12 @@ const ProjectsLandingPage: React.FC = () => {
         <p className="text-gray-600 mb-6">
           Let's discuss how I can help with your cybersecurity and technology leadership needs.
         </p>
-        <Link
-          to="/contact"
+        <a
+          href="/#contact"
           className="bg-blue-600 text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors"
         >
           Get In Touch
-        </Link>
+        </a>
       </section>
     </div>
   );
