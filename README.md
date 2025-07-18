@@ -1,26 +1,33 @@
-# Zenity CISO Portal
+# Vikas Bhatia Portfolio
 
-A modern web application built with React, TypeScript, and Tailwind CSS to showcase Zenity's leadership objectives and security initiatives.
+A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS showcasing Vikas Bhatia's expertise in cybersecurity, technology leadership, and digital transformation.
 
 ## 🚀 Features
 
-- Modern, responsive design
-- Interactive UI components
-- Leadership objectives visualization
-- Timeline of Zenity's history
-- Comprehensive security program showcase
+- **Modern, responsive design** with beautiful UI components
+- **Interactive portfolio sections** including hero, about, services, and contact
+- **Project showcase** with detailed case studies (including Zenity CISO Strategy)
+- **Professional experience** and technical skills visualization
+- **Contact form** with integrated scheduling
+- **Multi-page routing** with React Router
+- **Mobile-first responsive design**
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework:** React 18
-- **Language:** TypeScript
-- **Styling:** Tailwind CSS
+- **Frontend Framework:** React 18 with TypeScript
+- **Styling:** Tailwind CSS with custom animations
 - **UI Components:** 
-  - Radix UI
+  - Radix UI (Navigation Menu, Dropdown Menu)
   - Lucide React Icons
-  - Font Awesome
+  - Font Awesome Icons
+- **Routing:** React Router DOM
 - **Build Tool:** Vite
 - **Package Manager:** npm
+- **Styling Utilities:** 
+  - class-variance-authority
+  - clsx
+  - tailwind-merge
+  - tailwindcss-animate
 
 ## 📋 Prerequisites
 
@@ -32,7 +39,7 @@ A modern web application built with React, TypeScript, and Tailwind CSS to showc
 1. Clone the repository:
    ```bash
    git clone [repository-url]
-   cd zenity-ciso
+   cd vikas-bhatia-portfolio
    ```
 
 2. Install dependencies:
@@ -58,33 +65,62 @@ A modern web application built with React, TypeScript, and Tailwind CSS to showc
 ## 📁 Project Structure
 
 ```
-zenity-ciso/
-├── app/                 # Next.js app directory
-├── src/                 # Source files
-│   ├── components/      # React components
-│   └── ...
-├── public/             # Static assets
-├── tailwind.config.ts  # Tailwind configuration
-├── vite.config.ts      # Vite configuration
-└── tsconfig.json       # TypeScript configuration
+vikas-bhatia-portfolio/
+├── src/
+│   ├── app/                    # App-level components
+│   ├── components/             # Reusable UI components
+│   │   ├── ui/                # Base UI components (buttons, cards, etc.)
+│   │   └── ...                # Feature-specific components
+│   ├── layouts/               # Layout components
+│   │   ├── MainLayout.tsx     # Main portfolio layout
+│   │   └── ProjectLayout.tsx  # Project-specific layout
+│   ├── pages/                 # Page components
+│   │   ├── HomePage.tsx       # Main portfolio page
+│   │   └── ProjectsLandingPage.tsx
+│   ├── projects/              # Project-specific content
+│   │   └── zenity/           # Zenity CISO project
+│   ├── lib/                   # Utility functions
+│   └── main.tsx              # App entry point
+├── components/                # Shared components (Timeline)
+├── public/                   # Static assets
+├── tailwind.config.ts        # Tailwind configuration
+├── vite.config.ts           # Vite configuration
+└── tsconfig.json            # TypeScript configuration
 ```
 
-## 🎨 UI Components
+## 🎨 Key Components
 
-The project includes several key components:
+### Portfolio Sections
+- **Hero Section** - Introduction and call-to-action
+- **About Section** - Professional background and journey
+- **Services Section** - Cybersecurity and technology services
+- **Skills & Expertise** - Technical skills and industry experience
+- **Projects** - Case studies and portfolio work
+- **Contact Form** - Professional contact and scheduling
 
-- Leadership Objectives Section
-- Timeline/Zenity History
-- Navigation Menu
-- Custom UI components using Radix UI
+### Project Showcase
+- **Zenity CISO Strategy** - Comprehensive cybersecurity strategy case study
+- **Timeline Components** - Interactive project history visualization
+- **Leadership Objectives** - Strategic planning and implementation
 
 ## 🔧 Configuration
 
 ### Tailwind CSS
-The project uses Tailwind CSS for styling. Configuration can be found in `tailwind.config.ts`.
+The project uses Tailwind CSS for styling with custom animations and responsive design. Configuration can be found in `tailwind.config.ts`.
 
 ### TypeScript
-TypeScript configuration is managed through `tsconfig.json`.
+TypeScript configuration is managed through `tsconfig.json` with strict type checking enabled.
+
+### Vite
+Build tool configuration in `vite.config.ts` with React plugin and optimized build settings.
+
+## 🎯 Portfolio Highlights
+
+- **20+ years** of cybersecurity and technology leadership experience
+- **Fortune 500** and startup experience across multiple industries
+- **Professional certifications** including CISSP, CISM, CRISC, CISA, PMP
+- **Industry expertise** in Financial Services, Healthcare, Technology, Manufacturing, Retail, and Government
+- **Awards and recognition** from Security Magazine, CISO Platform, and RSA Conference
 
 ## 🤝 Contributing
 
@@ -98,10 +134,10 @@ TypeScript configuration is managed through `tsconfig.json`.
 
 This project is proprietary and confidential. All rights reserved.
 
-## 👥 Team
+## 👤 About Vikas Bhatia
 
-- Development Team at Zenity
+Vikas Bhatia is a cybersecurity executive and strategic technology leader with over 20 years of experience transforming organizations through innovative security solutions and digital transformation. His expertise spans cybersecurity strategy, risk management, security architecture, and executive coaching.
 
 ## 🔐 Security
 
-This project implements various security measures and follows best practices for web development. For security concerns, please contact the security team. 
+This portfolio website implements various security measures and follows best practices for web development. For security concerns, please contact through the provided contact information. 
