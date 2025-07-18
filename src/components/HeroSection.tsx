@@ -45,7 +45,7 @@ const HeroSection = () => {
               <span>Your next partner 🤝 for:</span>
               <div className="mt-2 text-blue-400 font-bold">
                 <Typewriter 
-                  words={["Cybersecurity", "Artificial Intelligence", "Startup Technology"]}
+                  words={["Cybersecurity", "Risk Management", "Artificial Intelligence", "Startup Technology"]}
                   speed={80}
                   delay={3000}
                   className="text-2xl lg:text-3xl font-bold"
@@ -57,65 +57,51 @@ const HeroSection = () => {
               Experienced cybersecurity executive who enables safe AI innovation through proven risk management and technical expertise. 25+ years leading security transformations for Fortune 500 companies, government agencies, and startups.
             </p>
 
-            {/* Primary CTA Button */}
-            <div className="mb-8">
+
 
 
           {/* Call to Action Buttons */}
-          <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <p>
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <Button
               size="lg"
-                className="bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-bold px-8 py-4 text-lg shadow-lg hover:shadow-xl transition-all duration-300"
+                className="border-red-600 text-red-600 hover:bg-red-600 hover:text-white font-semibold px-6 py-3 text-base transition-all duration-300"
+                variant="outline"
                 onClick={() => {
                 // Navigate to projects page
                 navigate('/projects');
               }}
             >
-              View Projects
+              Current Projects
             </Button>
             <Button
               size="lg"
               variant="outline"
-              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-8 py-4 text-lg transition-all duration-300"
+              className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-6 py-3 text-base transition-all duration-300"
               onClick={() => {
                 // Navigate to contact page
                 navigate('/contact');
               }}
             >
-             View Resume
+             Previous Experience
             </Button>
-                        </div>
-
-            {/* Key Credentials/Certifications */}
-            <div className="flex flex-col sm:flex-row gap-6 justify-center lg:justify-start">
-              {/* TS/SCI Cleared */}
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-black/20">
-                <div className="w-8 h-8 bg-green-500 rounded-full flex items-center justify-center">
-                  <Shield className="w-4 h-4 text-black" />
-                </div>
-                <span className="text-black font-medium">TS/SCI Cleared</span>
-              </div>
-
-              {/* C|CISO Certified */}
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-black/20">
-                <div className="w-8 h-8 bg-blue-500 rounded-full flex items-center justify-center">
-                  <Award className="w-4 h-4 text-black" />
-                </div>
-                <span className="text-black font-medium">C|CISO Certified</span>
-              </div>
-
-              {/* $750K Raised */}
-              <div className="flex items-center gap-3 bg-white/10 backdrop-blur-sm rounded-lg px-4 py-3 border border-black/20">
-                <div className="w-8 h-8 bg-purple-500 rounded-full flex items-center justify-center">
-                  <TrendingUp className="w-4 h-4 text-black" />
-                </div>
-                <span className="text-black font-medium">$750K Raised</span>
-              </div>
+            <Button
+              size="lg"
+              variant="outline"
+              className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white font-semibold px-6 py-3 text-base transition-all duration-300"
+              onClick={() => {
+                // Navigate to experience page
+                navigate('/experience');
+              }}
+            >
+            View Resume
+            </Button>
             </div>
+            </p>
+         
 
           </div>
         </div>
-      </div>
       </div>
     </section>
   )
