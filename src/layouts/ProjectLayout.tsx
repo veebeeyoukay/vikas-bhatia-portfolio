@@ -2,7 +2,7 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import ZenityFooter from '../components/ZenityFooter';
+import ZenityFooter from '../projects/zenity/components/ZenityFooter';
 
 interface ProjectLayoutProps {
   children: React.ReactNode;
