@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import HeroSection from '../components/HeroSection';
 
 const HomePage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -167,28 +168,7 @@ const HomePage: React.FC = () => {
   return (
     <div className="space-y-16">
       {/* Hero Section */}
-      <section id="home" className="text-center py-16">
-        <h1 className="text-5xl font-bold text-gray-900 mb-6">
-          Vikas Bhatia
-        </h1>
-        <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-          Cybersecurity Executive & Strategic Technology Leader
-        </p>
-        <div className="flex justify-center space-x-4">
-          <a
-            href="#projects"
-            className="bg-blue-600 text-white px-8 py-3 rounded-lg hover:bg-blue-700 transition-colors"
-          >
-            View Projects
-          </a>
-          <a
-            href="#contact"
-            className="border border-blue-600 text-blue-600 px-8 py-3 rounded-lg hover:bg-blue-50 transition-colors"
-          >
-            Get In Touch
-          </a>
-        </div>
-      </section>
+      <HeroSection />
 
       {/* About Section */}
       <section id="about" className="py-16">

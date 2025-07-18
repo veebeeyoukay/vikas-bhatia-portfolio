@@ -7,7 +7,7 @@ const ProjectsLandingPage: React.FC = () => {
       id: 'MetaFan',
       title: 'Metafan',
       description: 'MetaFan is the first truly social marketplace where collectors across categories discover, showcase, authenticate, and trade items within a vibrant community, powered by AI and Web3 technologies that enhance both the emotional and financial value of collections.',
-      category: 'Social Marketplace',
+      category: 'Personal Project - Social Marketplace',
       technologies: ['AI', 'Web3', 'Social Media'],
       featured: true,
     },
@@ -15,12 +15,20 @@ const ProjectsLandingPage: React.FC = () => {
       id: 'zenity',
       title: 'Zenity CISO Strategy',
       description: 'Comprehensive cybersecurity strategy and implementation plan for Zenity, including risk assessment, compliance framework, and technology roadmap.',
-      category: 'Cybersecurity Strategy',
+      category: 'Job Application - CISO',
       technologies: ['Risk Assessment', 'Compliance', 'Technology Roadmap'],
       featured: true,
       imageUrl: '/api/placeholder/400/250'
-    }
-    // Future projects will be added here
+    },
+    {
+      id: 'CloseRGC',
+      title: 'CloseGRC',
+      description: 'Close is a Sales Acceleration tool for that enables b2b companies to increase sales velocity by proactively understand their prospects compliance requirements.',
+      category: 'Personal Project - SaaS Application',
+      technologies: ['Sales Acceleration', 'Compliance', 'Sales Enablement'],
+      featured: true,
+      imageUrl: 'https://www.closegrc.com/wp-content/uploads/2025/07/CloseGRC-Logo-1.png'
+    }// Future projects will be added here
   ];
 
   return (
