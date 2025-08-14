@@ -114,6 +114,45 @@ TypeScript configuration is managed through `tsconfig.json` with strict type che
 ### Vite
 Build tool configuration in `vite.config.ts` with React plugin and optimized build settings.
 
+### Netlify Configuration
+
+#### Build Settings (Configure in Netlify UI)
+1. Navigate to **Project configuration > Build & deploy > Continuous deployment > Build settings**
+2. Configure the following:
+   - **Base directory**: Leave empty (defaults to repository root `/`)
+   - **Build command**: `npm run build`
+   - **Publish directory**: `dist`
+   - **Functions directory**: `netlify/functions` (if using Netlify Functions)
+
+#### netlify.toml Configuration (Repository Root)
+Create a `netlify.toml` file in your repository root to handle SPA routing and prevent 404 errors:
+
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+# CRITICAL: This redirect rule fixes 404 errors for React Router
+# It ensures all routes are handled by the client-side router
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
+#### Troubleshooting 404 Errors
+1. **Verify the redirect rule** in `netlify.toml` is present (see above)
+2. **Check build output**: Ensure `dist` directory contains `index.html` and all assets
+3. **Clear cache and redeploy**: In Netlify UI, trigger a "Clear cache and deploy site"
+4. **Verify React Router paths**: Ensure all routes in your app match deployed paths
+5. **Check deploy logs**: Look for any build errors or warnings in Netlify deploy logs
+
+#### Additional Netlify Features
+- **Deploy Previews**: Automatically generated for pull requests
+- **Branch Deploys**: Can be configured for staging branches
+- **Environment Variables**: Set in Netlify UI under "Environment variables"
+- **Deploy Notifications**: Configure webhooks for deployment status
+
 ## 🎯 Portfolio Highlights
 
 - **20+ years** of cybersecurity and technology leadership experience

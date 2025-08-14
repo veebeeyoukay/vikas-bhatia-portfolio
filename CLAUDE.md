@@ -84,3 +84,30 @@ import { Button } from "@/components/ui/button"
 4. **State Management**: Use React hooks for component state. No global state management is currently implemented.
 
 5. **Responsive Design**: Mobile-first approach using Tailwind's responsive prefixes (sm:, md:, lg:, xl:)
+
+## Netlify Deployment
+
+### Build Settings
+- **Build command**: `npm run build`
+- **Publish directory**: `dist` (relative to base directory)
+- **Base directory**: `/` (repository root)
+- **Package directory**: Not required (single site repository)
+
+### Configuration File (netlify.toml)
+If needed, create a `netlify.toml` file in the repository root with:
+```toml
+[build]
+  command = "npm run build"
+  publish = "dist"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+```
+
+### Important Notes for 404 Fixes
+1. **SPA Routing**: This is a React SPA using React Router. All routes must redirect to `/index.html` for client-side routing to work.
+2. **The redirect rule above ensures all paths are handled by React Router, preventing 404 errors on direct URL access or page refresh.**
+3. **Deploy Logs**: Check Netlify deploy logs for any build errors or missing dependencies.
+4. **File Paths**: Ensure all assets are in the `dist` directory after build.
