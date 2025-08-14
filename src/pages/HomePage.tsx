@@ -237,10 +237,10 @@ const HomePage: React.FC = () => {
       <section id="projects" className="py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Experience gained at highly mission critical organizations
+            Trusted by ....
           </h2>
           <p className="text-xl text-gray-600">
-            Strategic initiatives and cybersecurity transformations I've led across various organizations.
+            Organizations across multiple industries, from Fortune 500 to startups.
           </p>
         </div>
 
@@ -269,6 +269,27 @@ const HomePage: React.FC = () => {
             className="text-blue-600 hover:text-blue-700 font-medium text-lg"
           >
             See my current AI Development projects →
+          </Link>
+        </div>
+      </section>
+
+      {/* VikasGPT CTA Section */}
+      <section className="py-16 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-lg">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold mb-4">
+            Need Quick Insights?
+          </h2>
+          <p className="text-xl mb-8 opacity-90">
+            Chat with VikasGPT - an AI assistant trained on my expertise in cybersecurity and technology leadership
+          </p>
+          <Link
+            to="/vikasgpt"
+            className="inline-flex items-center bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium text-lg"
+          >
+            <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+            </svg>
+            Have a quick chat with VikasGPT
           </Link>
         </div>
       </section>
