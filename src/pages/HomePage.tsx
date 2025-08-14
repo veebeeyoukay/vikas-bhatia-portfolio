@@ -1,82 +1,16 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
+import { companies } from '../data/companies';
 // import { CompanyCloudDemo } from '../components/InteractiveCompanyCloud';
 
+// Import certification logos
+import qteLogo from '@/assets/logos/QTE.jpeg';
+import ccisoLogo from '@/assets/logos/CCISO.jpg';
+import cisspLogo from '@/assets/logos/CISSP.png';
+import cippLogo from '@/assets/logos/cipp.png';
+
 const HomePage: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    company: '',
-    phone: '',
-    service: '',
-    message: ''
-  });
-
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission (replace with actual API call)
-    try {
-      await new Promise(resolve => setTimeout(resolve, 2000));
-      setSubmitStatus('success');
-      setFormData({
-        name: '',
-        email: '',
-        company: '',
-        phone: '',
-        service: '',
-        message: ''
-      });
-    } catch (error) {
-      setSubmitStatus('error');
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
-
-  const contactInfo = [
-    {
-      title: 'Email',
-      value: 'vikas@example.com',
-      icon: '📧',
-      link: 'mailto:vikas@example.com'
-    },
-    {
-      title: 'LinkedIn',
-      value: 'linkedin.com/in/vikasbhatia',
-      icon: '💼',
-      link: 'https://linkedin.com/in/vikasbhatia'
-    },
-    {
-      title: 'Schedule Meeting',
-      value: 'Book a consultation',
-      icon: '📅',
-      link: 'https://app.usemotion.com/meet/vikas-bhatia/JP-meeting'
-    }
-  ];
-
-  const services = [
-    'Cybersecurity Strategy & Advisory',
-    'Security Architecture & Design',
-    'Digital Transformation Security',
-    'Incident Response & Recovery',
-    'Compliance & Governance',
-    'Executive Coaching & Training',
-    'Other'
-  ];
 
 
 
@@ -90,54 +24,7 @@ const HomePage: React.FC = () => {
     }
   ];
 
-  const awards = [
-    {
-      title: 'Cybersecurity Executive of the Year',
-      organization: 'Security Magazine',
-      year: '2022',
-      description: 'Recognized for outstanding leadership in cybersecurity strategy and innovation.'
-    },
-    {
-      title: 'Top 100 CISOs',
-      organization: 'CISO Platform',
-      year: '2021',
-      description: 'Named among the top 100 Chief Information Security Officers globally.'
-    },
-    {
-      title: 'Security Innovation Award',
-      organization: 'RSA Conference',
-      year: '2020',
-      description: 'Awarded for innovative approach to zero-trust architecture implementation.'
-    },
-    {
-      title: 'Technology Leadership Excellence',
-      organization: 'TechCrunch',
-      year: '2019',
-      description: 'Recognized for exceptional technology leadership and digital transformation success.'
-    }
-  ];
 
-  const projects = [
-    {
-      id: 'Recipies from the heart',
-      title: 'Recipies from the heart',
-      description: 'Recipies from the heart is a SaaS application that enables users to create, share, and discover recipes.',
-      category: 'Personal Project - SaaS Application',
-      technologies: ['SaaS', 'React', 'Node.js', 'Express', 'MongoDB'],
-      status: 'prototype',
-      developmenttime: '2 days',
-      acheivement: 'obtained ~100 users in 8 hrs',
-      featured: true
-    },
-    {
-      id: 'zenity',
-      title: 'Zenity CISO Strategy',
-      description: 'Comprehensive cybersecurity strategy and implementation plan for Zenity, including risk assessment, compliance framework, and technology roadmap.',
-      category: 'Cybersecurity Strategy',
-      technologies: ['Risk Assessment', 'Compliance', 'Technology Roadmap'],
-      featured: true
-    }
-  ];
 
   return (
     <div className="space-y-16">
@@ -300,43 +187,47 @@ const HomePage: React.FC = () => {
           <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
             Professional Certifications
           </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
-            {['Boardroom Qualified Technology Expert (QTE)', 'C|CISO', 'CISSP', 'CIPP', 
-              'Certified Ethical Hacker (CEH)', 'GIAC GSEC', 'ITIL V3', 'MCSE'].map((cert, index) => (
-              <div key={index} className="bg-white p-4 rounded-lg shadow-md text-center">
-                <p className="text-gray-800 font-medium">{cert}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Awards & Recognition */}
-        <div>
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-            Awards & Recognition
-          </h3>
-          <div className="grid md:grid-cols-2 gap-8">
-            {awards.map((award, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex items-start space-x-4">
-                  <div className="bg-yellow-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                    <svg className="w-6 h-6 text-yellow-600" fill="currentColor" viewBox="0 0 20 20">
-                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                    </svg>
-                  </div>
-                  <div>
-                    <h4 className="text-lg font-semibold text-gray-900 mb-1">
-                      {award.title}
-                    </h4>
-                    <p className="text-blue-600 font-medium mb-2">
-                      {award.organization} • {award.year}
-                    </p>
-                    <p className="text-gray-600 text-sm">
-                      {award.description}
-                    </p>
-                  </div>
-                </div>
-              </div>
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+            {[
+              {
+                name: 'QTE',
+                logo: qteLogo,
+                url: 'https://www.accdglobal.org/certified-director-programs/qualified-technology-expert',
+                title: 'Boardroom Qualified Technology Expert'
+              },
+              {
+                name: 'C|CISO',
+                logo: ccisoLogo,
+                url: 'https://www.eccouncil.org/programs/certified-chief-information-security-officer-cciso/',
+                title: 'Certified Chief Information Security Officer'
+              },
+              {
+                name: 'CISSP',
+                logo: cisspLogo,
+                url: 'https://www.isc2.org/Certifications/CISSP',
+                title: 'Certified Information Systems Security Professional'
+              },
+              {
+                name: 'CIPP',
+                logo: cippLogo,
+                url: 'https://iapp.org/certify/cipp/',
+                title: 'Certified Information Privacy Professional'
+              }
+            ].map((cert, index) => (
+              <a
+                key={index}
+                href={cert.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-white rounded-lg shadow-sm p-4 flex items-center justify-center hover:shadow-md transition-shadow group"
+                title={cert.title}
+              >
+                <img
+                  src={cert.logo}
+                  alt={cert.title}
+                  className="w-20 h-20 object-contain group-hover:scale-105 transition-transform"
+                />
+              </a>
             ))}
           </div>
         </div>
@@ -346,287 +237,38 @@ const HomePage: React.FC = () => {
       <section id="projects" className="py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Projects & Case Studies
+            Experience gained at highly mission critical organizations
           </h2>
           <p className="text-xl text-gray-600">
             Strategic initiatives and cybersecurity transformations I've led across various organizations.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {projects.map((project) => (
-            <div key={project.id} className="bg-white rounded-lg shadow-md overflow-hidden">
-              {project.id === 'Recipies from the heart' && (
-                <div className="w-full h-64 bg-gray-100">
-                  <video 
-                    className="w-full h-full object-cover"
-                    controls
-                    autoPlay
-                    muted
-                    loop
-                  >
-                    <source src="/src/assets/recipies-screenshot.mov" type="video/quicktime" />
-                    Your browser does not support the video tag.
-                  </video>
-                </div>
-              )}
-              <div className="p-8">
-                <h3 className="text-2xl font-semibold mb-4 text-gray-900">
-                  {project.title}
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  {project.description}
-                </p>
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="text-blue-600 hover:text-blue-700 font-medium"
-                >
-                  View Project →
-                </Link>
-              </div>
+        <div className="grid grid-cols-4 sm:grid-cols-6 md:grid-cols-8 lg:grid-cols-10 gap-3">
+          {companies.map((company) => (
+            <div 
+              key={company.domain} 
+              className="bg-white rounded-lg shadow-sm p-4 flex items-center justify-center hover:shadow-md transition-shadow"
+              title={company.name}
+            >
+              <img
+                src={`https://logo.clearbit.com/${company.domain}`}
+                alt={`${company.name} logo`}
+                className="w-12 h-12 object-contain"
+                onError={(e) => {
+                  e.currentTarget.src = `https://ui-avatars.com/api/?name=${company.name}&background=0D8ABC&color=fff&size=48`;
+                }}
+              />
             </div>
           ))}
         </div>
-      </section>
-
-      {/* Contact Section */}
-      <section id="contact" className="py-16 bg-gray-50 rounded-lg">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Get In Touch
-          </h2>
-          <p className="text-xl text-gray-600">
-            Ready to transform your organization's security posture? Let's discuss how I can help 
-            you achieve your cybersecurity and technology leadership goals.
-          </p>
-        </div>
-
-        <div className="grid lg:grid-cols-2 gap-16">
-          {/* Contact Form */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">
-              Send a Message
-            </h3>
-            
-            {submitStatus === 'success' && (
-              <div className="bg-green-50 border border-green-200 rounded-lg p-4 mb-6">
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 text-green-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  <p className="text-green-800 font-medium">
-                    Thank you! Your message has been sent successfully. I'll get back to you within 24 hours.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            {submitStatus === 'error' && (
-              <div className="bg-red-50 border border-red-200 rounded-lg p-4 mb-6">
-                <div className="flex items-center">
-                  <svg className="w-5 h-5 text-red-500 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
-                  </svg>
-                  <p className="text-red-800 font-medium">
-                    There was an error sending your message. Please try again or contact me directly.
-                  </p>
-                </div>
-              </div>
-            )}
-
-            <form onSubmit={handleSubmit} className="space-y-6">
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-2">
-                    Full Name *
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Your full name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                    Email Address *
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="your.email@company.com"
-                  />
-                </div>
-              </div>
-
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label htmlFor="company" className="block text-sm font-medium text-gray-700 mb-2">
-                    Company
-                  </label>
-                  <input
-                    type="text"
-                    id="company"
-                    name="company"
-                    value={formData.company}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="Your company name"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    value={formData.phone}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                    placeholder="+1 (555) 123-4567"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="service" className="block text-sm font-medium text-gray-700 mb-2">
-                  Service of Interest
-                </label>
-                <select
-                  id="service"
-                  name="service"
-                  value={formData.service}
-                  onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                >
-                  <option value="">Select a service</option>
-                  {services.map((service, index) => (
-                    <option key={index} value={service}>
-                      {service}
-                    </option>
-                  ))}
-                </select>
-              </div>
-
-              <div>
-                <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-2">
-                  Message *
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={6}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-                  placeholder="Tell me about your organization's security needs and how I can help..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-blue-600 text-white py-3 px-6 rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? 'Sending Message...' : 'Send Message'}
-              </button>
-            </form>
-          </div>
-
-          {/* Contact Information */}
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-8">
-              Contact Information
-            </h3>
-            
-            <div className="space-y-6">
-              {contactInfo.map((info, index) => (
-                <div key={index} className="flex items-center space-x-4">
-                  <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center flex-shrink-0">
-                    <span className="text-xl">{info.icon}</span>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900">{info.title}</h4>
-                    <a
-                      href={info.link}
-                      target={info.link.startsWith('http') ? '_blank' : '_self'}
-                      rel={info.link.startsWith('http') ? 'noopener noreferrer' : ''}
-                      className="text-blue-600 hover:text-blue-700 transition-colors"
-                    >
-                      {info.value}
-                    </a>
-                  </div>
-                </div>
-              ))}
-            </div>
-
-            <div className="mt-12 bg-white rounded-lg p-6">
-              <h4 className="text-lg font-semibold text-gray-900 mb-4">
-                What to Expect
-              </h4>
-              <ul className="space-y-3 text-gray-600">
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Response within 24 hours
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Free initial consultation
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Confidential discussion
-                </li>
-                <li className="flex items-start">
-                  <svg className="w-5 h-5 text-green-500 mr-3 mt-0.5 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                  </svg>
-                  Tailored engagement proposal
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Final Call to Action */}
-      <section className="text-center py-16 bg-blue-600 text-white rounded-lg">
-        <h2 className="text-3xl font-bold mb-4">
-          Ready to Work Together?
-        </h2>
-        <p className="text-xl mb-8 opacity-90">
-          Let's discuss how I can help transform your organization's security posture.
-        </p>
-        <div className="flex justify-center space-x-4">
-          <a
-            href="#contact"
-            className="bg-white text-blue-600 px-8 py-3 rounded-lg hover:bg-gray-100 transition-colors font-medium"
+        
+        <div className="mt-8 text-center">
+          <Link 
+            to="/projects" 
+            className="text-blue-600 hover:text-blue-700 font-medium text-lg"
           >
-            Get In Touch
-          </a>
-          <Link
-            to="/projects"
-            className="border border-white text-white px-8 py-3 rounded-lg hover:bg-white hover:text-blue-600 transition-colors font-medium"
-          >
-            View Projects
+            See my current AI Development projects →
           </Link>
         </div>
       </section>

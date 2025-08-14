@@ -2,7 +2,6 @@ import React from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import ZenityFooter from '../projects/zenity/components/ZenityFooter';
 
 interface ProjectLayoutProps {
   children: React.ReactNode;
@@ -11,7 +10,6 @@ interface ProjectLayoutProps {
 const ProjectLayout: React.FC<ProjectLayoutProps> = ({ children }) => {
   const location = useLocation();
   const projectName = location.pathname.split('/').pop() || 'Project';
-  const isZenityProject = location.pathname === '/projects/zenity';
 
   return (
     <div className="min-h-screen">
@@ -41,8 +39,8 @@ const ProjectLayout: React.FC<ProjectLayoutProps> = ({ children }) => {
         {children}
       </main>
       
-      {/* Use ZenityFooter for Zenity project, regular Footer for other projects */}
-      {isZenityProject ? <ZenityFooter /> : <Footer />}
+      {/* Use regular Footer for all projects */}
+      <Footer />
     </div>
   );
 };

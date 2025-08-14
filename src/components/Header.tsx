@@ -9,8 +9,7 @@ const NAV_ITEMS = [
   { label: "About", href: "#about" },
   { label: "Resume", href: resumePDF, isExternal: true },
   { label: "Credentials", href: "#credentials" },
-  { label: "Projects", href: "/projects" },
-  { label: "Contact", href: "#contact" }
+  { label: "Projects", href: "/projects" }
 ];
 
 const Header = () => {
