@@ -34,14 +34,17 @@ class VikasGPTService {
     return `session_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
   }
 
-  // Get response from OpenAI via Netlify Function
+  // Get response from OpenAI via Netlify Edge Function
   async getChatResponse(messages: ChatMessage[]): Promise<string> {
     try {
+      // Get or create leadId from localStorage for session continuity
+      let leadId = localStorage.getItem('vikasgpt_lead_id');
+      
       const response = await axios.post(
-        `${this.baseUrl}/vikasgpt-chat`,
+        '/api/chat',
         {
+          leadId,
           messages,
-          sessionId: this.sessionId,
         },
         {
           headers: {
@@ -50,17 +53,18 @@ class VikasGPTService {
         }
       );
 
-      // Update session ID if returned from server
-      if (response.data.sessionId) {
-        this.sessionId = response.data.sessionId;
+      // Save leadId for session continuity
+      if (response.data.leadId) {
+        localStorage.setItem('vikasgpt_lead_id', response.data.leadId);
+        this.sessionId = response.data.leadId;
       }
 
-      return response.data.response;
+      return response.data.reply;
     } catch (error: any) {
       console.error('Chat API error:', error);
       
       // In development without Netlify Functions, use fallback responses
-      if (!import.meta.env.PROD && error.code === 'ERR_NETWORK') {
+      if (!import.meta.env.PROD && (error.code === 'ERR_NETWORK' || error.response?.status === 404)) {
         return this.getFallbackResponse(messages[messages.length - 1].content);
       }
       

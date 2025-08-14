@@ -87,6 +87,8 @@ const VikasGPTPage: React.FC = () => {
       setMessages(prev => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
+      // Ensure we stay on the same page and scroll to bottom
+      setTimeout(scrollToBottom, 100);
     }
   };
 
@@ -129,16 +131,16 @@ const VikasGPTPage: React.FC = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gray-50 flex flex-col">
+    <div className="flex flex-col min-h-[calc(100vh-320px)]">
       {/* Chat Container */}
-      <div className="flex-1 max-w-4xl mx-auto w-full px-4 py-8">
-        <div className="bg-white rounded-lg shadow-lg h-[calc(100vh-250px)] flex flex-col">
+      <div className="max-w-4xl mx-auto w-full px-4 py-6 flex-1">
+        <div className="bg-white rounded-lg shadow-lg h-[calc(100vh-380px)] flex flex-col">
           {/* Chat Header */}
-          <div className="border-b px-6 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
+          <div className="border-b px-4 sm:px-6 py-3 sm:py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-t-lg">
             <div className="flex items-center justify-between">
               <div>
-                <h1 className="text-xl font-semibold">VikasGPT</h1>
-                <p className="text-sm opacity-90">AI Assistant powered by Vikas Bhatia's expertise</p>
+                <h1 className="text-lg sm:text-xl font-semibold">VikasGPT</h1>
+                <p className="text-xs sm:text-sm opacity-90 hidden sm:block">AI Assistant powered by Vikas Bhatia's expertise</p>
               </div>
               <div className="flex items-center space-x-2">
                 <button
@@ -163,13 +165,13 @@ const VikasGPTPage: React.FC = () => {
           </div>
 
           {/* Messages Container */}
-          <div className="flex-1 overflow-y-auto px-6 py-4 space-y-4">
+          <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-4 space-y-4">
             {messages.map((message) => (
               <div
                 key={message.id}
                 className={`flex ${message.role === 'user' ? 'justify-end' : 'justify-start'}`}
               >
-                <div className={`flex max-w-[80%] ${message.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
+                <div className={`flex max-w-[85%] sm:max-w-[80%] ${message.role === 'user' ? 'flex-row-reverse' : 'flex-row'}`}>
                   <div className={`flex-shrink-0 ${message.role === 'user' ? 'ml-3' : 'mr-3'}`}>
                     <div className={`w-8 h-8 rounded-full flex items-center justify-center ${
                       message.role === 'user' ? 'bg-blue-600' : 'bg-purple-600'
@@ -216,9 +218,9 @@ const VikasGPTPage: React.FC = () => {
 
           {/* Suggested Questions (shown only when no user messages) */}
           {messages.length === 1 && (
-            <div className="px-6 py-3 border-t">
+            <div className="px-4 sm:px-6 py-3 border-t bg-gray-50 flex-shrink-0">
               <p className="text-sm text-gray-600 mb-2">Try asking:</p>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
                 {suggestedQuestions.map((question, index) => (
                   <button
                     key={index}
@@ -233,20 +235,20 @@ const VikasGPTPage: React.FC = () => {
           )}
 
           {/* Input Form */}
-          <form onSubmit={handleSubmit} className="border-t px-6 py-4">
-            <div className="flex items-center">
+          <form onSubmit={handleSubmit} className="border-t px-4 sm:px-6 py-3 sm:py-4 bg-white flex-shrink-0">
+            <div className="flex items-center gap-2">
               <input
                 type="text"
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
                 placeholder="Ask about Vikas's experience, services, or expertise..."
-                className="flex-1 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
+                className="flex-1 px-3 sm:px-4 py-2 text-sm sm:text-base border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-transparent"
                 disabled={isLoading}
               />
               <button
                 type="submit"
                 disabled={!input.trim() || isLoading}
-                className="ml-3 bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed"
+                className="bg-blue-600 text-white p-2 rounded-lg hover:bg-blue-700 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex-shrink-0"
               >
                 <Send className="w-5 h-5" />
               </button>
