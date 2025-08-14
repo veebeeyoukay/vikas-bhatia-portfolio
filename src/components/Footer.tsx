@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { scrollToSection } from '@/lib/utils';
 
 const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -78,19 +79,28 @@ const Footer: React.FC = () => {
                 </Link>
               </li>
               <li>
-                <a href="/#about" className="text-gray-300 hover:text-white transition-colors">
+                <button 
+                  onClick={() => scrollToSection('about')}
+                  className="text-gray-300 hover:text-white transition-colors bg-transparent border-none cursor-pointer text-left"
+                >
                   About
-                </a>
+                </button>
               </li>
               <li>
-                <a href="/#expertise" className="text-gray-300 hover:text-white transition-colors">
-                  Expertise
-                </a>
+                <button 
+                  onClick={() => scrollToSection('expertise')}
+                  className="text-gray-300 hover:text-white transition-colors bg-transparent border-none cursor-pointer text-left"
+                >
+                  Previous Experience
+                </button>
               </li>
               <li>
-                <a href="/#services" className="text-gray-300 hover:text-white transition-colors">
+                <button 
+                  onClick={() => scrollToSection('services')}
+                  className="text-gray-300 hover:text-white transition-colors bg-transparent border-none cursor-pointer text-left"
+                >
                   Services
-                </a>
+                </button>
               </li>
               <li>
                 <Link to="/projects" className="text-gray-300 hover:text-white transition-colors">

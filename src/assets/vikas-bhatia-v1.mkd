@@ -1,0 +1,116 @@
+```markdown
+# Knowledge Base: Vikas Bhatia
+
+## 1. Executive Summary
+
+[cite_start]Vikas Bhatia is an innovative and experienced cybersecurity and risk management executive with extensive experience across more than 130 companies, including major financial institutions, government agencies, and technology firms[cite: 2026]. [cite_start]He is a cleared professional (TS/SCI/NATO) [cite: 2026][cite_start], founder of a successful SaaS company (JustProtect Inc.) [cite: 2049][cite_start], and holds numerous high-level certifications including C|CISO, CISSP, and CIPP[cite: 2073, 2074, 2075].
+
+[cite_start]His personality and motivational profile reveal a leader who is naturally patient, interactive, and dependable (High S/I DISC profile)[cite: 275, 316, 376]. [cite_start]He is primarily driven by a very high need for independence and uniqueness (Individualistic Value) [cite: 52, 630] [cite_start]and a passion for continuous learning and understanding (Theoretical Value)[cite: 52, 630]. [cite_start]While he is people-oriented in his natural state [cite: 275][cite_start], his thinking style is more focused on efficiency, tasks, and systems than on the nuances of personal needs [cite: 1281, 1283][cite_start], an area he has identified for development[cite: 1308]. [cite_start]He adapts his behavior in professional settings to be more direct and decisive, a shift from his natural comfort zone[cite: 222, 241].
+
+## 2. Professional Profile (Based on Resume)
+
+### 2.1. Career Summary
+
+[cite_start]Vikas is a "business first" executive-facing cyber risk and compliance professional who has delivered mission-critical solutions across the full implementation lifecycle[cite: 2026]. [cite_start]He has held roles ranging from founder and CISO to consultant and cybersecurity lead for organizations like the National Geospatial-Intelligence Agency, Blackrock, and the Federal Reserve[cite: 2044, 2049, 2056, 2057].
+
+### 2.2. Professional Timeline
+
+* **Independent Consulting** (Nov 2024 - Apr 2025)
+    * [cite_start]**Roles:** CISO, GRC, AI, and Risk Consultant (Contract)[cite: 2029].
+    * [cite_start]**Key Projects:** AI & Cybersecurity Risk Advisor to a pre-launch AI agency CEO[cite: 2031]; [cite_start]Project managed HiTrust evidence collection for EvolutionIQ[cite: 2032]; [cite_start]Owned SOC2 certification for Harness[cite: 2033]; [cite_start]Served as the first CISO for a Big Pharma vendor[cite: 2034].
+
+* **InMarket Media LLC** (May 2024 - Oct 2024)
+    * [cite_start]**Role:** VP, Information Security[cite: 2036].
+    * [cite_start]**Achievements:** Partnered with C-Suite during an FTC Order response [cite: 2038][cite_start], implemented the enterprise risk governance framework [cite: 2039][cite_start], and delivered a 2-year security maturity plan[cite: 2040].
+
+* **National Geospatial-Intelligence Agency (NGA)** (Mar 2024 - May 2024)
+    * [cite_start]**Role:** Cybersecurity Lead - Office of Inspector General (OIG) Audit[cite: 2045].
+    * [cite_start]**Achievements:** Represented OIG during intra-Intelligence Agency risk assessments [cite: 2047] [cite_start]and oversaw a FISMA Vulnerability Management audit[cite: 2048].
+
+* **JustProtect Inc.** (May 2018 - Feb 2024)
+    * [cite_start]**Role:** Founder, CEO & Chief Risk Officer[cite: 2049].
+    * [cite_start]**Achievements:** Raised $750k in financing and grew the company to $700k ARR[cite: 2051]. [cite_start]The platform conducted 5,000+ assessments with 60% efficiency[cite: 2052]. [cite_start]Was a finalist in an FDIC tech sprint[cite: 2053].
+
+* **Kalki Consulting LLC** (Aug 2012 - May 2018)
+    * [cite_start]**Role:** Virtual CISO (Multiple Clients)[cite: 2054].
+    * [cite_start]**Achievements:** Co-led a redesign of the vendor risk assessment process for the Federal Reserve [cite: 2056][cite_start], designed an SMB risk assessment approach for Blackrock [cite: 2057][cite_start], and led a global identity management evaluation for Blackstone[cite: 2058].
+
+* **Deloitte & Touche** (Nov 2006 - Apr 2012)
+    * **Roles:** Northeast Deloitte-HP Alliance/Business Development Manager; Security & Privacy Services Manager; [cite_start]Senior Security Consultant[cite: 2065].
+    * [cite_start]**Achievements:** Increased revenue by 300% in the Alliance Manager role[cite: 2066]. [cite_start]Led cyber threat response for the Target.com transformation and data privacy projects for American Express[cite: 2066].
+
+* **CapGemini UK** (Sep 2000 - Oct 2006)
+    * **Roles:** Security MSSP Technical Consultant; Senior WINTEL/MCSE Solutions Consultant; [cite_start]3rd Line National WINTEL Engineer[cite: 2066].
+    * [cite_start]**Achievements:** Provided 24x7x365 security support to 23 mission-critical clients [cite: 2066] [cite_start]and played key roles during global virus outbreaks like "I Love You" and "Nimda"[cite: 2066].
+
+### 2.3. Expertise & Certifications
+
+* [cite_start]**Regulatory & Industry Frameworks:** HIPAA, GLBA, SOX, FFIEC, PCI DSS, NERC/CIP, GDPR, NY Shield, CCPA, NIST, ISO 27001/2, COBIT, FISMA, HITRUST[cite: 2080, 2081].
+* [cite_start]**AI Standards:** ISO 42001, ISO 23894, NIST AΙ.600-1[cite: 2080].
+* [cite_start]**Technical Experience:** Cloud Security (AWS, Google, Azure), GRC Solutions (Archer, ServiceNow), SIEM (ArcSight), and a wide range of operational security technologies[cite: 2083, 2084, 2085, 2086].
+* [cite_start]**Software Development:** Management experience (6 years) and hands-on (2 years) with C#, .net, Golang, HTML/CSS, React, and MySQL[cite: 2088, 2089, 2090, 2091].
+* [cite_start]**Certifications:** Boardroom Qualified Technology Expert (QTE), C|CISO, CISSP, CIPP, Certified Ethical Hacker (CEH), GIAC GSEC, ITIL V3, MCSE[cite: 2071, 2073, 2074, 2075, 2076, 2077, 2078].
+
+### 2.4. Education
+
+* **BA Hons. [cite_start]Economics (with German Language)** from Kingston University, UK (Graduated 1998)[cite: 2109].
+
+## 3. Behavioral & Motivational Profile (Based on Innermetrix)
+
+[cite_start]This profile analyzes WHAT natural talents Vikas has (Attribute Index), WHY he is motivated to use them (Values Index), and HOW he prefers to use them (DISC Index)[cite: 8].
+
+### 3.1. DISC Behavioral Style (HOW)
+
+[cite_start]The DISC profile measures preference for being Decisive, Interactive, Stabilizing, and Cautious[cite: 130, 131, 133, 134]. [cite_start]Vikas shows a significant shift between his natural, authentic style and the adaptive style he uses when being observed or feeling pressure[cite: 33, 43].
+
+* [cite_start]**Natural Style (S-I Profile):** His highest natural scores are **Stabilizing (63)** and **Interactive (60)**[cite: 32, 39].
+    * [cite_start]This is the style of a patient, dependable, and steady person [cite: 321] [cite_start]who is also poised, interactive, and works well with others[cite: 277, 278]. [cite_start]He is a calming influence [cite: 323][cite_start], prefers a flexible environment [cite: 281][cite_start], and enjoys helping others[cite: 280]. [cite_start]He is naturally friendly and easy-going[cite: 376].
+
+* [cite_start]**Adaptive Style (D-C Profile):** In his adaptive style, his **Decisive** score jumps from 49 to **63** [cite: 30][cite_start], while his Interactive and Stabilizing scores drop significantly (60 to 39 and 63 to 39, respectively)[cite: 32, 39].
+    * [cite_start]This indicates he consciously adapts to be more direct, assertive, and results-focused, while toning down his natural preference for interaction and methodical pacing[cite: 43]. [cite_start]This adaptation is less authentic [cite: 44] [cite_start]and can become stressful if required for extended periods[cite: 45].
+
+* **Communication Style:**
+    * [cite_start]**To communicate effectively with Vikas, one should:** Be accurate and realistic [cite: 521][cite_start], present organized arguments with pros and cons [cite: 517][cite_start], and follow through on commitments[cite: 518].
+    * [cite_start]**One should avoid:** Being vague [cite: 524][cite_start], domineering [cite: 529][cite_start], or impersonal [cite: 526][cite_start], and making promises that can't be kept[cite: 528].
+
+### 3.2. Values Index (WHY)
+
+[cite_start]This index measures the primary drivers that motivate a person[cite: 585]. Vikas's passion comes from his desire for uniqueness, knowledge, and practical results.
+
+* **Top 3 Motivators:**
+    1.  [cite_start]**Individualistic (Score: 78 - Very High):** A powerful drive to be seen as unique, independent, and to stand apart from the crowd[cite: 823, 824]. [cite_start]He projects self-confidence [cite: 52] [cite_start]and enjoys having the freedom for personal expression[cite: 825]. [cite_start]This aligns with his history as a founder and consultant[cite: 2049, 2054].
+    2.  [cite_start]**Theoretical (Score: 71 - Very High):** A passion for knowledge, learning, and discovering the "truth," often for its own sake[cite: 1136, 1137]. [cite_start]He is continually in learning mode and values analytical thinking[cite: 52, 1138].
+    3.  [cite_start]**Economic (Score: 65 - High):** A strong drive for practical, bottom-line results and economic returns[cite: 742, 743]. [cite_start]This helps provide motivation through long projects[cite: 52].
+
+* **Lowest Motivators:**
+    * [cite_start]**Altruistic (Score: 28):** He is not primarily motivated by humanitarian efforts or helping others without a practical purpose[cite: 984, 985].
+    * [cite_start]**Regulatory (Score: 31):** He does not have a strong drive for establishing rigid order, routine, or structure[cite: 1062, 1063].
+
+### 3.3. Attribute Index (WHAT)
+
+[cite_start]This index measures how a person thinks and makes decisions, revealing their natural talents[cite: 6]. It looks at how he views the external world and his internal self.
+
+* **External World View (How he views the world): Efficient Pattern**
+    * [cite_start]His thinking is most clear and developed when focused on **Systems Judgment (7.4)** and **Practical Thinking (6.9)**[cite: 74, 75, 1985, 1986].
+    * [cite_start]His thinking is least clear regarding **Empathy (6.0)**[cite: 73, 1984].
+    * [cite_start]This means he focuses on efficiency, organization, and the completion of tasks[cite: 1281, 1283]. [cite_start]He sees organizational needs more clearly than the individual personal needs of others [cite: 1285][cite_start], and his "human awareness" is an area for development[cite: 1308, 1316].
+
+* **Internal World View (How he views himself): Self-Actualizing Pattern**
+    * [cite_start]He has a well-balanced internal view of himself, with nearly equal scores in **Self Direction (7.9)**, **Role Awareness (7.1)**, and **Self Esteem/Belief (6.7)**[cite: 76, 77, 78, 1987, 1988, 1989].
+    * [cite_start]This balance gives him a good internal source of energy [cite: 1328] [cite_start]and makes him comfortable in a variety of situations[cite: 1330]. [cite_start]His ability to handle stress, remain committed, and focus on results is good[cite: 1329].
+
+* **Key Strengths (Top-scoring attributes):**
+    * [cite_start]Self Direction (7.9) [cite: 1996]
+    * [cite_start]Project and Goal Focus (7.7) [cite: 1591, 1999]
+    * [cite_start]Personal Commitment (7.5) [cite: 1752, 2001]
+    * [cite_start]Gaining Commitment (7.5) [cite: 1855, 2000]
+    * [cite_start]Conceptual Thinking (7.4) [cite: 1585, 2001]
+    * [cite_start]Results Orientation (7.4) [cite: 1598, 2001]
+
+* **Areas for Development (Lowest-scoring attributes):**
+    * [cite_start]Self Control (5.4) [cite: 1890, 2021]
+    * [cite_start]Self Assessment (5.5) [cite: 1958, 2021]
+    * [cite_start]Empathetic Outlook / Attitude Toward Others (6.0) [cite: 1665, 1831, 2020, 2021]
+    * [cite_start]Developing Others (6.1) [cite: 1853, 2017]
+    * [cite_start]Evaluating Others / Realistic Expectations (6.2) [cite: 1668, 1835, 2016]
+```

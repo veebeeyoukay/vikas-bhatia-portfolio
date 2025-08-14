@@ -110,6 +110,12 @@
   }
   body {
     @apply bg-background text-foreground;
+    scroll-behavior: smooth;
+  }
+  
+  /* Ensure anchor links work properly with fixed header */
+  html {
+    scroll-padding-top: 100px;
   }
 }
 

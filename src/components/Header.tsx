@@ -6,12 +6,15 @@ import {
   NavigationMenuLink
 } from "@/components/ui/navigation-menu"
 import { Link, useLocation } from "react-router-dom"
+import { scrollToSection } from "@/lib/utils"
+import resumePDF from "@/assets/Vikas Bhatia-Resume-External-July 2025.pdf"
 
 const NAV_ITEMS = [
-  { label: "Home", href: "#home" },
+  // { label: "Home", href: "#home" },
   { label: "About", href: "#about" },
-  { label: "Expertise", href: "#expertise" },
-  { label: "Services", href: "#services" },
+  { label: "Resume", href: resumePDF, isExternal: true },
+  // { label: "Previous Experience", href: "#expertise" },
+  // { label: "Services", href: "#services" },
   { label: "Credentials", href: "#credentials" },
   { label: "Projects", href: "/projects" },
   { label: "Contact", href: "#contact" }
@@ -43,10 +46,19 @@ const Header = () => {
                     asChild
                     className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium"
                   >
-                    {item.href.startsWith('/') ? (
+                    {item.isExternal ? (
+                      <a href={item.href} target="_blank" rel="noopener noreferrer">
+                        {item.label}
+                      </a>
+                    ) : item.href.startsWith('/') ? (
                       <Link to={item.href}>{item.label}</Link>
                     ) : (
-                      <a href={item.href}>{item.label}</a>
+                      <button 
+                        onClick={() => scrollToSection(item.href.replace('#', ''))}
+                        className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium bg-transparent border-none cursor-pointer"
+                      >
+                        {item.label}
+                      </button>
                     )}
                   </NavigationMenuLink>
                 </NavigationMenuItem>

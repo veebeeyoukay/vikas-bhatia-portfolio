@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button"
 import { Shield, Award, TrendingUp } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 import Typewriter from './Typewriter';
+import vikasImage from '@/assets/Vikas_Team_Portaits-Neil_Raja-16.png';
 
 
 const HeroSection = () => {
@@ -21,7 +22,7 @@ const HeroSection = () => {
               {/* Headshot with tech overlay */}
               <div className="relative w-80 h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl">
                 <img 
-                  src="https://media.licdn.com/dms/image/v2/C4D03AQFJwVMf2-PbSw/profile-displayphoto-shrink_100_100/profile-displayphoto-shrink_100_100/0/1559210662788?e=1758153600&v=beta&t=LzDoZzh_j1niwmROR36MTt74IR7om6D94HwcDSLTEMk"
+                  src={vikasImage}
                   alt="Vikas Bhatia - AI-Cybersecurity Executive"
                   className="w-full h-full object-cover"
                 />
@@ -54,7 +55,7 @@ const HeroSection = () => {
             </div>
             {/* Brief Description */}
             <p className="text-lg lg:text-xl text-black mb-8 leading-relaxed max-w-2xl">
-              Experienced cybersecurity executive who enables safe AI innovation through proven risk management and technical expertise. 25+ years leading security transformations for Fortune 500 companies, government agencies, and startups.
+              Business-first AI first cybersecurity executive with TS/SCI/NATO clearance. 25+ years leading security transformations across 130+ companies including Fortune 500, government agencies, and startups.
             </p>
 
 
@@ -72,29 +73,29 @@ const HeroSection = () => {
                 navigate('/projects');
               }}
             >
-              Current Projects
+              AI Projects
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="border-blue-600 text-blue-600 hover:bg-blue-600 hover:text-white font-semibold px-6 py-3 text-base transition-all duration-300"
               onClick={() => {
-                // Navigate to contact page
-                navigate('/contact');
+                // Navigate to resume page
+                navigate('/resume');
               }}
             >
-             Previous Experience
+             View Resume
             </Button>
             <Button
               size="lg"
               variant="outline"
               className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white font-semibold px-6 py-3 text-base transition-all duration-300"
               onClick={() => {
-                // Navigate to experience page
-                navigate('/experience');
+                // Navigate to contact section
+                navigate('/#contact');
               }}
             >
-            View Resume
+            Let's Connect
             </Button>
             </div>
             </p>

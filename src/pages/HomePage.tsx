@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
+// import { CompanyCloudDemo } from '../components/InteractiveCompanyCloud';
 
 const HomePage: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -77,53 +78,15 @@ const HomePage: React.FC = () => {
     'Other'
   ];
 
-  const technicalSkills = [
-    { name: 'Cybersecurity Strategy', level: 95, category: 'Strategy' },
-    { name: 'Risk Management', level: 90, category: 'Strategy' },
-    { name: 'Security Architecture', level: 88, category: 'Technical' },
-    { name: 'Cloud Security', level: 85, category: 'Technical' },
-    { name: 'Compliance & Governance', level: 92, category: 'Strategy' },
-    { name: 'Incident Response', level: 87, category: 'Technical' },
-    { name: 'Identity & Access Management', level: 83, category: 'Technical' },
-    { name: 'Data Protection', level: 89, category: 'Technical' },
-    { name: 'Security Operations', level: 86, category: 'Technical' },
-    { name: 'Digital Transformation', level: 91, category: 'Strategy' }
-  ];
 
-  const industryExpertise = [
-    { industry: 'Financial Services', experience: '15+ years', focus: 'Regulatory compliance, fraud prevention' },
-    { industry: 'Healthcare', experience: '12+ years', focus: 'HIPAA, patient data protection' },
-    { industry: 'Technology', experience: '18+ years', focus: 'Product security, DevSecOps' },
-    { industry: 'Manufacturing', experience: '10+ years', focus: 'OT security, supply chain' },
-    { industry: 'Retail', experience: '8+ years', focus: 'PCI DSS, e-commerce security' },
-    { industry: 'Government', experience: '6+ years', focus: 'FedRAMP, FISMA compliance' }
-  ];
-
-  const certifications = [
-    { name: 'CISSP', issuer: 'ISC²', year: '2010', status: 'Active' },
-    { name: 'CISM', issuer: 'ISACA', year: '2012', status: 'Active' },
-    { name: 'CRISC', issuer: 'ISACA', year: '2014', status: 'Active' },
-    { name: 'CISA', issuer: 'ISACA', year: '2011', status: 'Active' },
-    { name: 'PMP', issuer: 'PMI', year: '2013', status: 'Active' },
-    { name: 'AWS Security', issuer: 'Amazon', year: '2020', status: 'Active' },
-    { name: 'Azure Security', issuer: 'Microsoft', year: '2021', status: 'Active' },
-    { name: 'Google Cloud Security', issuer: 'Google', year: '2022', status: 'Active' }
-  ];
 
   const education = [
     {
-      degree: 'Master of Business Administration (MBA)',
-      institution: 'University of California, Berkeley',
-      year: '2008',
-      focus: 'Technology Management & Strategy',
-      description: 'Focused on technology leadership, strategic management, and organizational transformation.'
-    },
-    {
-      degree: 'Bachelor of Science in Computer Science',
-      institution: 'Stanford University',
-      year: '2003',
-      focus: 'Computer Science & Engineering',
-      description: 'Specialized in software engineering, systems architecture, and cybersecurity fundamentals.'
+      degree: 'BA Hons. Economics (with German Language)',
+      institution: 'Kingston University, UK',
+      year: '1998',
+      focus: 'Economics & International Business',
+      description: 'Combined rigorous economic analysis with German language proficiency, providing a strong foundation for international business and strategic thinking.'
     }
   ];
 
@@ -156,6 +119,17 @@ const HomePage: React.FC = () => {
 
   const projects = [
     {
+      id: 'Recipies from the heart',
+      title: 'Recipies from the heart',
+      description: 'Recipies from the heart is a SaaS application that enables users to create, share, and discover recipes.',
+      category: 'Personal Project - SaaS Application',
+      technologies: ['SaaS', 'React', 'Node.js', 'Express', 'MongoDB'],
+      status: 'prototype',
+      developmenttime: '2 days',
+      acheivement: 'obtained ~100 users in 8 hrs',
+      featured: true
+    },
+    {
       id: 'zenity',
       title: 'Zenity CISO Strategy',
       description: 'Comprehensive cybersecurity strategy and implementation plan for Zenity, including risk assessment, compliance framework, and technology roadmap.',
@@ -177,7 +151,7 @@ const HomePage: React.FC = () => {
             About Vikas Bhatia
           </h2>
           <p className="text-xl text-gray-600">
-            Cybersecurity executive and strategic technology leader with over 20 years of experience 
+            Cybersecurity executive and strategic technology leader with over 25 years of experience 
             transforming organizations through innovative security solutions and digital transformation.
           </p>
         </div>
@@ -212,11 +186,11 @@ const HomePage: React.FC = () => {
             <div className="space-y-3">
               <div className="flex justify-between">
                 <span className="text-gray-600">Experience:</span>
-                <span className="font-medium">20+ Years</span>
+                <span className="font-medium">25+ Years</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Organizations:</span>
-                <span className="font-medium">50+</span>
+                <span className="font-medium">130+</span>
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Industries:</span>
@@ -224,95 +198,24 @@ const HomePage: React.FC = () => {
               </div>
               <div className="flex justify-between">
                 <span className="text-gray-600">Certifications:</span>
-                <span className="font-medium">12+</span>
+                <span className="font-medium">QTE, C|CISO, CISSP, CIPP+</span>
+              </div>
+              <div className="flex justify-between">
+                <span className="text-gray-600">Security Clearance:</span>
+                <span className="font-medium">TS/SCI/NATO</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Expertise Section */}
-      <section id="expertise" className="py-16 bg-gray-50 rounded-lg">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 mb-4">
-            Expertise & Skills
-          </h2>
-          <p className="text-xl text-gray-600">
-            Comprehensive cybersecurity and technology leadership expertise developed over two decades 
-            of hands-on experience across diverse industries and organizational scales.
-          </p>
-        </div>
-
-        {/* Technical Skills */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-            Technical Skills & Proficiencies
-          </h3>
-          <div className="grid lg:grid-cols-2 gap-8">
-            {technicalSkills.map((skill, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <div className="flex justify-between items-center mb-2">
-                  <h4 className="font-semibold text-gray-900">{skill.name}</h4>
-                  <span className="text-sm text-gray-500">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-gray-200 rounded-full h-2">
-                  <div 
-                    className="bg-blue-600 h-2 rounded-full transition-all duration-500"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
-                <span className="text-xs text-gray-500 mt-1 inline-block">
-                  {skill.category}
-                </span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Industry Expertise */}
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-            Industry Expertise
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {industryExpertise.map((industry, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md">
-                <h4 className="text-xl font-semibold mb-3 text-gray-900">
-                  {industry.industry}
-                </h4>
-                <div className="space-y-2 text-gray-600">
-                  <p><span className="font-medium">Experience:</span> {industry.experience}</p>
-                  <p><span className="font-medium">Focus:</span> {industry.focus}</p>
-                </div>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Certifications */}
-        <div>
-          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
-            Professional Certifications
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {certifications.map((cert, index) => (
-              <div key={index} className="bg-white p-6 rounded-lg shadow-md text-center">
-                <div className="bg-blue-100 w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <svg className="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z" />
-                  </svg>
-                </div>
-                <h4 className="font-semibold text-gray-900 mb-2">{cert.name}</h4>
-                <p className="text-sm text-gray-600 mb-1">{cert.issuer}</p>
-                <p className="text-xs text-gray-500">{cert.year} • {cert.status}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Previous Experience Section */}
+      {/* <section id="expertise" className="py-16 bg-gray-50 rounded-lg">
+        <CompanyCloudDemo />
+      </section> */}
 
       {/* Services Section */}
-      <section id="services" className="py-16">
+      {/* <section id="services" className="py-16">
         <div className="text-center mb-12">
           <h2 className="text-3xl font-bold text-gray-900 mb-4">
             Services & Solutions
@@ -349,7 +252,7 @@ const HomePage: React.FC = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Credentials Section */}
       <section id="credentials" className="py-16 bg-gray-50 rounded-lg">
@@ -363,14 +266,14 @@ const HomePage: React.FC = () => {
           </p>
         </div>
 
-        {/* Education */}
+        {/* Education & Certifications */}
         <div className="mb-16">
           <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
             Education
           </h3>
-          <div className="grid lg:grid-cols-2 gap-8">
+          <div className="flex justify-center mb-12">
             {education.map((edu, index) => (
-              <div key={index} className="bg-white p-8 rounded-lg shadow-md">
+              <div key={index} className="bg-white p-8 rounded-lg shadow-md max-w-2xl">
                 <div className="flex justify-between items-start mb-4">
                   <div>
                     <h4 className="text-xl font-semibold text-gray-900 mb-2">
@@ -390,6 +293,18 @@ const HomePage: React.FC = () => {
                 <p className="text-gray-600">
                   {edu.description}
                 </p>
+              </div>
+            ))}
+          </div>
+          
+          <h3 className="text-2xl font-bold text-center text-gray-900 mb-8">
+            Professional Certifications
+          </h3>
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+            {['Boardroom Qualified Technology Expert (QTE)', 'C|CISO', 'CISSP', 'CIPP', 
+              'Certified Ethical Hacker (CEH)', 'GIAC GSEC', 'ITIL V3', 'MCSE'].map((cert, index) => (
+              <div key={index} className="bg-white p-4 rounded-lg shadow-md text-center">
+                <p className="text-gray-800 font-medium">{cert}</p>
               </div>
             ))}
           </div>
@@ -441,6 +356,20 @@ const HomePage: React.FC = () => {
         <div className="grid md:grid-cols-2 gap-8">
           {projects.map((project) => (
             <div key={project.id} className="bg-white rounded-lg shadow-md overflow-hidden">
+              {project.id === 'Recipies from the heart' && (
+                <div className="w-full h-64 bg-gray-100">
+                  <video 
+                    className="w-full h-full object-cover"
+                    controls
+                    autoPlay
+                    muted
+                    loop
+                  >
+                    <source src="/src/assets/recipies-screenshot.mov" type="video/quicktime" />
+                    Your browser does not support the video tag.
+                  </video>
+                </div>
+              )}
               <div className="p-8">
                 <h3 className="text-2xl font-semibold mb-4 text-gray-900">
                   {project.title}

@@ -4,6 +4,14 @@ import { Link } from 'react-router-dom';
 const ProjectsLandingPage: React.FC = () => {
   const projects = [
     {
+      id: 'Recipies from the heart',
+      title: 'Recipies from the heart',
+      description: 'Recipies from the heart is a SaaS application that enables businesses to protect their data and systems from cyber threats.',
+      category: 'Personal Project - SaaS Application',
+      technologies: ['AI', 'Cybersecurity', 'SaaS'],
+      featured: true,
+    },
+    {
       id: 'MetaFan',
       title: 'Metafan',
       description: 'MetaFan is the first truly social marketplace where collectors across categories discover, showcase, authenticate, and trade items within a vibrant community, powered by AI and Web3 technologies that enhance both the emotional and financial value of collections.',
