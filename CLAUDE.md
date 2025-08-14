@@ -2,51 +2,85 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Commands
+## Project Overview
+
+This is Vikas Bhatia's personal portfolio website showcasing cybersecurity executive expertise. Built with React 18, TypeScript, Vite, and Tailwind CSS.
+
+## Essential Commands
 
 ### Development
-- `npm run dev` - Start Vite development server on http://localhost:5173
-- `npm run build` - Run TypeScript compiler and build production bundle with Vite
-- `npm run preview` - Preview production build locally
+```bash
+npm run dev          # Start dev server at localhost:5173
+npm run build        # TypeScript check + production build
+npm run preview      # Preview production build
+npm run lint         # Run ESLint with strict settings
+npm run format       # Format code with Prettier
+```
 
-### Code Quality
-- `npm run lint` - Run ESLint on src directory for TypeScript/TSX files
-- `npm run format` - Format code with Prettier
-
-Note: No test commands are currently configured. Consider setting up a testing framework if tests are needed.
+### Testing
+No test framework is currently configured. If adding tests, install and configure a test runner first.
 
 ## Architecture
 
-This is a React 18 portfolio website built with TypeScript and Vite, using Tailwind CSS for styling.
-
-### Core Structure
-- **Single Page Application** with React Router for client-side routing
-- **Two layout systems**:
-  - `MainLayout` - Standard portfolio pages with consistent navigation and styling
-  - `ProjectLayout` - Project showcases with custom branding while maintaining navigation
-- **Component-based architecture** with UI components built using Radix UI primitives and custom Tailwind styles
-
-### Key Technologies
-- **Build**: Vite with React plugin
+### Tech Stack
 - **Framework**: React 18 with TypeScript
-- **Routing**: React Router DOM v6
-- **Styling**: Tailwind CSS with custom animations, class-variance-authority for variant management
-- **UI Components**: Radix UI (navigation menu, dropdown menu), Lucide React icons
-- **Interactive Elements**: react-icon-cloud for company visualization
+- **Build Tool**: Vite 5.1.6
+- **Styling**: Tailwind CSS + Shadcn/UI components
+- **Routing**: React Router DOM 6
+- **Icons**: Lucide React, Font Awesome
 
-### File Organization
-- `src/App.tsx` - Main routing configuration
-- `src/pages/` - Page-level components (HomePage, ProjectsLandingPage)
-- `src/projects/` - Project-specific implementations (e.g., zenity/)
-- `src/components/` - Shared components across the portfolio
-- `src/components/ui/` - Base UI components using Radix UI and Tailwind
-- `src/layouts/` - Layout wrappers for different page types
-- `src/lib/utils.ts` - Utility functions including `cn()` for className merging
+### Project Structure
+```
+src/
+├── app/           # App-level components and styles
+├── components/    # Reusable components
+│   └── ui/       # Shadcn/UI base components
+├── layouts/      # MainLayout (portfolio), ProjectLayout (projects)
+├── pages/        # Page components
+├── projects/     # Project-specific content
+│   └── zenity/  # Zenity CISO project case study
+└── lib/          # Utilities (cn() for className merging)
+```
 
-### TypeScript Configuration
-- Strict mode enabled
-- Path alias `@/*` configured for `src/*` imports
-- JSX preserve mode for component compilation
+### Key Patterns
 
-### Project Pages Pattern
-Projects like Zenity have their own component structure under `src/projects/[project-name]/` with dedicated sections, maintaining modularity while sharing the global navigation system.
+1. **Component Creation**: Use TypeScript functional components. Check existing components in `/src/components/` for naming and structure patterns.
+
+2. **Styling**: Use Tailwind utility classes. For dynamic classes, use the `cn()` helper from `/src/lib/utils.ts`:
+```typescript
+import { cn } from "@/lib/utils"
+cn("base-class", conditionalClass && "conditional-class")
+```
+
+3. **Path Aliases**: Use `@/` for src directory imports:
+```typescript
+import { Button } from "@/components/ui/button"
+```
+
+4. **Shadcn/UI Components**: Located in `/src/components/ui/`. These follow Radix UI patterns with Tailwind styling.
+
+5. **Routing**: Two layout types exist:
+   - `MainLayout`: Portfolio pages
+   - `ProjectLayout`: Project case studies
+
+## Configuration Files
+
+- **TypeScript**: Strict mode enabled, ES2017 target
+- **Tailwind**: Dark mode via class, custom animations, CSS variables for theming
+- **Vite**: React plugin, path alias configured
+- **Shadcn/UI**: New York style, zinc base color
+
+## Development Guidelines
+
+1. **Before Adding Dependencies**: Check if functionality exists in current packages (Radix UI, Lucide icons, etc.)
+
+2. **Component Location**:
+   - Reusable UI: `/src/components/ui/`
+   - Page sections: `/src/components/`
+   - Project-specific: `/src/projects/[project-name]/`
+
+3. **Code Quality**: Always run `npm run lint` and `npm run format` before finalizing changes.
+
+4. **State Management**: Use React hooks for component state. No global state management is currently implemented.
+
+5. **Responsive Design**: Mobile-first approach using Tailwind's responsive prefixes (sm:, md:, lg:, xl:)

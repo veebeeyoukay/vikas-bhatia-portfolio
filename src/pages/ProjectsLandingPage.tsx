@@ -35,8 +35,50 @@ const ProjectsLandingPage: React.FC = () => {
       category: 'Personal Project - SaaS Application',
       technologies: ['Sales Acceleration', 'Compliance', 'Sales Enablement'],
       featured: true,
-      imageUrl: 'https://www.closegrc.com/wp-content/uploads/2025/07/CloseGRC-Logo-1.png'
-    }// Future projects will be added here
+      imageUrl: 'https://www.closegrc.com/wp-content/uploads/2025/07/CloseGRC-Logo-1.png',
+      url: 'https://closegrc.com'
+    },
+    {
+      id: 'NIST CSF Assessment',
+      title: 'NIST CSF Assessment',
+      description: 'Simple NIST CSF Assessment',
+      category: 'Personal Project - NIST CSF Assessment',
+      technologies: ['NIST CSF', 'Assessment', 'Security'],
+      featured: true,
+      imageUrl: '/api/placeholder/400/250',
+      url: 'https://nist-guardian-muse.lovable.app/'
+    },
+    {
+      id: 'wacassa',
+      title: 'WaCassa',
+      description: 'Modern, AI-powered WhatsApp Business management platform that enables teams to collaboratively handle customer conversations with built-in bilingual support (English/Spanish).',
+      category: 'Personal Project - SaaS Application',
+      technologies: ['React', 'TypeScript', 'AI Translation', 'CRM', 'Real-time Analytics'],
+      featured: true,
+      imageUrl: '/api/placeholder/400/250',
+      url: 'https://wacassa.netlify.app'
+    },
+    {
+      id: 'icarrie',
+      title: 'iCarrie',
+      description: 'AI-powered luxury collection assistant designed to help users organize, track, and care for their designer handbags and shoes with smart insights and personalized recommendations.',
+      category: 'Personal Project - AI Application',
+      technologies: ['React', 'TypeScript', 'Vite', 'Tailwind CSS', 'AI Insights'],
+      featured: true,
+      imageUrl: '/api/placeholder/400/250',
+      url: 'https://icarrie.netlify.app'
+    },
+    {
+      id: 'parentalcontrols',
+      title: 'ParentalControls',
+      description: 'AI-powered parental control guidance that makes family digital safety simple. Get step-by-step help implementing bulletproof protection across all devices.',
+      category: 'Personal Project - Family Safety',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'AI Guidance', 'Threat Intelligence'],
+      featured: true,
+      imageUrl: '/api/placeholder/400/250',
+      url: 'https://parentalcontrols.netlify.app'
+    }
+    // Future projects will be added here
   ];
 
   return (
@@ -89,15 +131,29 @@ const ProjectsLandingPage: React.FC = () => {
                   </div>
                 </div>
                 
-                <Link
-                  to={`/projects/${project.id}`}
-                  className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
-                >
-                  View Project
-                  <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                  </svg>
-                </Link>
+                {project.url ? (
+                  <a
+                    href={project.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+                  >
+                    Visit Website
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </a>
+                ) : (
+                  <Link
+                    to={`/projects/${project.id}`}
+                    className="inline-flex items-center text-blue-600 hover:text-blue-700 font-medium"
+                  >
+                    View Project
+                    <svg className="w-4 h-4 ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                    </svg>
+                  </Link>
+                )}
               </div>
             </div>
           ))}
