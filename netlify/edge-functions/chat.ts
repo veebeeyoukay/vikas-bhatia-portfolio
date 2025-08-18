@@ -3,6 +3,7 @@ import type { Context } from "https://edge.netlify.com/";
 // Types
 interface ChatRequest {
   leadId?: string;
+  threadId?: string; // For OpenAI Assistant conversation continuity
   messages: Array<{
     role: 'user' | 'assistant';
     content: string;
@@ -29,7 +30,9 @@ const AIRTABLE_API_KEY = Deno.env.get('AIRTABLE_API_KEY');
 const AIRTABLE_BASE_ID = Deno.env.get('AIRTABLE_BASE_ID');
 const OPENAI_ASSISTANT_ID = 'asst_qKqJtGBA328VCB2An5Nk0JyD'; // Your OpenAI Assistant ID
 
-// Persona and system instructions
+// NOTE: The following persona is not used when using the Assistant API
+// The assistant's instructions are configured directly in OpenAI's Assistant settings
+// Keeping this for reference or fallback to Chat Completions API
 const PERSONA_CORE = `You are "Vikas," an executive-facing cybersecurity & AI advisor who helps B2B companies close deals faster by de-risking compliance and security.
 Voice: concise, warm, curious, value-first. No emojis.
 Mission: qualify inbound visitors and decide fit. Lead the conversation with smart discovery questions.
@@ -75,7 +78,7 @@ export default async function handler(req: Request, context: Context) {
 
     // Parse request body
     const body: ChatRequest = await req.json();
-    const { leadId, messages } = body;
+    const { leadId, threadId, messages } = body;
 
     // Generate or use existing lead ID
     const currentLeadId = leadId || crypto.randomUUID();
@@ -114,8 +117,8 @@ export default async function handler(req: Request, context: Context) {
       }), { headers });
     }
 
-    // Call OpenAI to get response
-    const aiResponse = await getOpenAIResponse(messages);
+    // Call OpenAI Assistant to get response
+    const { reply: aiResponse, threadId: currentThreadId } = await getOpenAIResponse(messages, threadId);
     
     // Extract qualification fields from conversation
     const extractedFields = await extractLeadFields(messages, aiResponse);
@@ -127,7 +130,8 @@ export default async function handler(req: Request, context: Context) {
     await saveConversation(currentLeadId, messages, aiResponse, domain);
 
     return new Response(JSON.stringify({ 
-      leadId: currentLeadId, 
+      leadId: currentLeadId,
+      threadId: currentThreadId,
       reply: aiResponse 
     }), { headers });
 
@@ -143,33 +147,143 @@ export default async function handler(req: Request, context: Context) {
   }
 }
 
-async function getOpenAIResponse(messages: any[]): Promise<string> {
+async function getOpenAIResponse(messages: any[], threadId?: string): Promise<{ reply: string; threadId: string }> {
   if (!OPENAI_API_KEY) {
-    return "I'm currently in demo mode. In production, I'll help qualify your cybersecurity and compliance needs.";
+    return {
+      reply: "I'm currently in demo mode. In production, I'll help qualify your cybersecurity and compliance needs.",
+      threadId: threadId || 'demo-thread'
+    };
   }
 
   try {
-    const response = await fetch('https://api.openai.com/v1/chat/completions', {
+    let currentThreadId = threadId;
+    
+    // Create thread if not exists
+    if (!currentThreadId) {
+      const threadResponse = await fetch('https://api.openai.com/v1/threads', {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${OPENAI_API_KEY}`,
+          'Content-Type': 'application/json',
+          'OpenAI-Beta': 'assistants=v2'
+        },
+        body: JSON.stringify({})
+      });
+      
+      if (!threadResponse.ok) {
+        throw new Error(`Failed to create thread: ${threadResponse.statusText}`);
+      }
+      
+      const threadData = await threadResponse.json();
+      currentThreadId = threadData.id;
+    }
+    
+    // Get the last user message
+    const lastUserMessage = messages[messages.length - 1];
+    if (!lastUserMessage || lastUserMessage.role !== 'user') {
+      throw new Error('No user message found');
+    }
+    
+    // Add message to thread
+    const messageResponse = await fetch(`https://api.openai.com/v1/threads/${currentThreadId}/messages`, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${OPENAI_API_KEY}`,
         'Content-Type': 'application/json',
+        'OpenAI-Beta': 'assistants=v2'
       },
       body: JSON.stringify({
-        model: 'gpt-4o-mini',
-        messages: [
-          { role: 'system', content: PERSONA_CORE },
-          ...messages
-        ],
-        temperature: 0.6,
-        max_tokens: 200,
-      }),
+        role: 'user',
+        content: lastUserMessage.content
+      })
     });
-
-    const data = await response.json();
-    return data.choices[0].message.content;
+    
+    if (!messageResponse.ok) {
+      throw new Error(`Failed to add message: ${messageResponse.statusText}`);
+    }
+    
+    // Run the assistant
+    const runResponse = await fetch(`https://api.openai.com/v1/threads/${currentThreadId}/runs`, {
+      method: 'POST',
+      headers: {
+        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        'Content-Type': 'application/json',
+        'OpenAI-Beta': 'assistants=v2'
+      },
+      body: JSON.stringify({
+        assistant_id: OPENAI_ASSISTANT_ID
+      })
+    });
+    
+    if (!runResponse.ok) {
+      throw new Error(`Failed to run assistant: ${runResponse.statusText}`);
+    }
+    
+    const runData = await runResponse.json();
+    const runId = runData.id;
+    
+    // Poll for completion
+    let runStatus = 'in_progress';
+    let attempts = 0;
+    const maxAttempts = 30; // 30 seconds timeout
+    
+    while (runStatus === 'in_progress' || runStatus === 'queued') {
+      if (attempts >= maxAttempts) {
+        throw new Error('Assistant run timeout');
+      }
+      
+      await new Promise(resolve => setTimeout(resolve, 1000)); // Wait 1 second
+      
+      const statusResponse = await fetch(`https://api.openai.com/v1/threads/${currentThreadId}/runs/${runId}`, {
+        headers: {
+          'Authorization': `Bearer ${OPENAI_API_KEY}`,
+          'OpenAI-Beta': 'assistants=v2'
+        }
+      });
+      
+      if (!statusResponse.ok) {
+        throw new Error(`Failed to check run status: ${statusResponse.statusText}`);
+      }
+      
+      const statusData = await statusResponse.json();
+      runStatus = statusData.status;
+      
+      if (runStatus === 'failed' || runStatus === 'cancelled' || runStatus === 'expired') {
+        throw new Error(`Assistant run ${runStatus}`);
+      }
+      
+      attempts++;
+    }
+    
+    // Get the assistant's response
+    const messagesResponse = await fetch(`https://api.openai.com/v1/threads/${currentThreadId}/messages`, {
+      headers: {
+        'Authorization': `Bearer ${OPENAI_API_KEY}`,
+        'OpenAI-Beta': 'assistants=v2'
+      }
+    });
+    
+    if (!messagesResponse.ok) {
+      throw new Error(`Failed to get messages: ${messagesResponse.statusText}`);
+    }
+    
+    const messagesData = await messagesResponse.json();
+    const assistantMessage = messagesData.data.find((msg: any) => msg.role === 'assistant');
+    
+    if (!assistantMessage) {
+      throw new Error('No assistant response found');
+    }
+    
+    // Extract text content from the assistant message
+    const textContent = assistantMessage.content.find((c: any) => c.type === 'text');
+    const reply = textContent ? textContent.text.value : 'I apologize, but I was unable to generate a response.';
+    
+    return {
+      reply,
+      threadId: currentThreadId!
+    };
   } catch (error) {
-    console.error('OpenAI API error:', error);
+    console.error('OpenAI Assistant API error:', error);
     throw error;
   }
 }

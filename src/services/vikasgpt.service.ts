@@ -37,13 +37,15 @@ class VikasGPTService {
   // Get response from OpenAI via Netlify Edge Function
   async getChatResponse(messages: ChatMessage[]): Promise<string> {
     try {
-      // Get or create leadId from localStorage for session continuity
+      // Get or create leadId and threadId from localStorage for session continuity
       let leadId = localStorage.getItem('vikasgpt_lead_id');
+      let threadId = localStorage.getItem('vikasgpt_thread_id');
       
       const response = await axios.post(
         '/api/chat',
         {
           leadId,
+          threadId,
           messages,
         },
         {
@@ -53,10 +55,14 @@ class VikasGPTService {
         }
       );
 
-      // Save leadId for session continuity
+      // Save leadId and threadId for session continuity
       if (response.data.leadId) {
         localStorage.setItem('vikasgpt_lead_id', response.data.leadId);
         this.sessionId = response.data.leadId;
+      }
+      
+      if (response.data.threadId) {
+        localStorage.setItem('vikasgpt_thread_id', response.data.threadId);
       }
 
       return response.data.reply;
@@ -147,6 +153,9 @@ class VikasGPTService {
   // Create new session
   createNewSession(): void {
     this.sessionId = this.generateSessionId();
+    // Clear stored thread and lead IDs for a fresh conversation
+    localStorage.removeItem('vikasgpt_lead_id');
+    localStorage.removeItem('vikasgpt_thread_id');
   }
 }
 
