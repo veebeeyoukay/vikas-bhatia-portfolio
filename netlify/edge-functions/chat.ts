@@ -260,7 +260,7 @@ async function upsertLead(leadId: string, fields: LeadFields, domain: string, ip
 
   if (existingData.records && existingData.records.length > 0) {
     // Update existing lead
-    await fetch(`${url}/${existingData.records[0].id}`, {
+    const updateResponse = await fetch(`${url}/${existingData.records[0].id}`, {
       method: 'PATCH',
       headers: {
         'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
@@ -268,18 +268,27 @@ async function upsertLead(leadId: string, fields: LeadFields, domain: string, ip
       },
       body: JSON.stringify({ fields: leadData }),
     });
+    if (!updateResponse.ok) {
+      const errorBody = await updateResponse.text();
+      console.error('Error updating lead:', updateResponse.status, errorBody);
+    }
   } else {
     // Create new lead
-    await fetch(url, {
+    const createResponse = await fetch(url, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ 
-        records: [{ fields: { ...leadData, created_at: new Date().toISOString() } }] 
+        records: [{ fields: leadData }] 
       }),
     });
+    if (!createResponse.ok) {
+      const errorBody = await createResponse.text();
+      console.error('Error creating lead:', createResponse.status, errorBody);
+      console.error('Attempted to create with:', JSON.stringify({ records: [{ fields: leadData }] }));
+    }
   }
   } catch (error) {
     console.error('Error upserting lead:', error);
@@ -287,7 +296,7 @@ async function upsertLead(leadId: string, fields: LeadFields, domain: string, ip
   }
 }
 
-async function saveConversation(leadId: string, messages: any[], response: string, domain: string): Promise<void> {
+async function saveConversation(leadId: string, messages: any[], response: string, _domain: string): Promise<void> {
   if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) {
     console.log('Airtable credentials missing - skipping conversation save');
     return;
@@ -296,7 +305,7 @@ async function saveConversation(leadId: string, messages: any[], response: strin
   try {
     const url = `https://api.airtable.com/v0/${AIRTABLE_BASE_ID}/Conversations`;
   
-  const records = [];
+  const records: any[] = [];
   
   // Save user message if present
   if (messages.length > 0) {
@@ -337,7 +346,10 @@ async function saveConversation(leadId: string, messages: any[], response: strin
     });
     
     if (!apiResponse.ok) {
+      const errorBody = await apiResponse.text();
       console.error('Airtable Conversations table error:', apiResponse.status, apiResponse.statusText);
+      console.error('Error details:', errorBody);
+      console.log('Request body was:', JSON.stringify({ records }));
       console.log('Make sure the Conversations table exists in your Airtable base');
     }
   } catch (error) {
@@ -370,7 +382,7 @@ async function getAbuseStrikes(leadId: string): Promise<number> {
   return 0;
 }
 
-async function logAbuse(leadId: string, message: string, strikes: number, ip: string, domain: string): Promise<void> {
+async function logAbuse(leadId: string, message: string, strikes: number, ip: string, _domain: string): Promise<void> {
   if (!AIRTABLE_API_KEY || !AIRTABLE_BASE_ID) return;
 
   // Update lead with abuse strikes
