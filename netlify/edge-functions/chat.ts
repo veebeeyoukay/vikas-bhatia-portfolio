@@ -27,7 +27,7 @@ interface LeadFields {
 const OPENAI_API_KEY = Deno.env.get('OPENAI_API_KEY');
 const AIRTABLE_API_KEY = Deno.env.get('AIRTABLE_API_KEY');
 const AIRTABLE_BASE_ID = Deno.env.get('AIRTABLE_BASE_ID');
-const OPENAI_ASSISTANT_ID = Deno.env.get('OPENAI_ASSISTANT_ID'); // You'll need to create this
+const OPENAI_ASSISTANT_ID = 'asst_qKqJtGBA328VCB2An5Nk0JyD'; // Your OpenAI Assistant ID
 
 // Persona and system instructions
 const PERSONA_CORE = `You are "Vikas," an executive-facing cybersecurity & AI advisor who helps B2B companies close deals faster by de-risking compliance and security.
@@ -248,9 +248,22 @@ async function upsertLead(leadId: string, fields: LeadFields, domain: string, ip
     const existingData = await existingLead.json();
     console.log('Existing lead data:', existingData);
   
+  // Clean up empty fields that Airtable can't accept
+  const cleanedFields = Object.entries(fields).reduce((acc, [key, value]) => {
+    // Skip empty strings for date fields and other fields that can't accept empty strings
+    if (key === 'timeline_date' && value === '') {
+      return acc;
+    }
+    // Keep non-empty values
+    if (value !== '') {
+      acc[key] = value;
+    }
+    return acc;
+  }, {} as any);
+
   const leadData = {
     lead_id: leadId,
-    ...fields,
+    ...cleanedFields,
     ip_address: ip,
     source: 'Portfolio Chat',
     status: fields.company_name ? 'Qualifying' : 'New',
@@ -317,7 +330,7 @@ async function saveConversation(leadId: string, messages: any[], response: strin
         turn_index: messages.length,
         role: lastMessage.role,
         message: lastMessage.content,
-        timestamp: new Date().toISOString(),
+        // timestamp is auto-populated by Airtable (Created time field)
         // Domains: [domainRecordId]
       }
     });
@@ -331,7 +344,7 @@ async function saveConversation(leadId: string, messages: any[], response: strin
       turn_index: messages.length + 1,
       role: 'assistant',
       message: response,
-      timestamp: new Date().toISOString(),
+      // timestamp is auto-populated by Airtable (Created time field)
       // Domains: [domainRecordId]
     }
   });
@@ -427,7 +440,7 @@ async function logAbuse(leadId: string, message: string, strikes: number, ip: st
           ip_address: ip,
           message: message,
           strike_number: strikes,
-          timestamp: new Date().toISOString(),
+          // timestamp is auto-populated by Airtable (Created time field)
           // Domains: [domainRecordId]
         }
       }]
