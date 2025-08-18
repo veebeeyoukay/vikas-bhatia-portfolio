@@ -327,7 +327,7 @@ async function saveConversation(leadId: string, messages: any[], response: strin
     }
   });
 
-    const response = await fetch(url, {
+    const apiResponse = await fetch(url, {
       method: 'POST',
       headers: {
         'Authorization': `Bearer ${AIRTABLE_API_KEY}`,
@@ -336,8 +336,8 @@ async function saveConversation(leadId: string, messages: any[], response: strin
       body: JSON.stringify({ records }),
     });
     
-    if (!response.ok) {
-      console.error('Airtable Conversations table error:', response.status, response.statusText);
+    if (!apiResponse.ok) {
+      console.error('Airtable Conversations table error:', apiResponse.status, apiResponse.statusText);
       console.log('Make sure the Conversations table exists in your Airtable base');
     }
   } catch (error) {
