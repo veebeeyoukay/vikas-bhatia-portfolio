@@ -78,7 +78,17 @@ const ProjectsLandingPage: React.FC = () => {
       imageUrl: '/api/placeholder/400/250',
       url: 'https://parentalcontrols.netlify.app'
     }
-    // Future projects will be added here
+    {
+      id: 'On the Calendar',
+      title: 'On the Calendar',
+      description: 'Transforms paper event calendars into shareable digital calendars that parents can add to their phones with one click. Built for PTAs, schools, and community organizations.',
+      category: 'Personal Project - On the Calendar',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'AI Guidance', 'Threat Intelligence'],
+      featured: true,
+      imageUrl: '/api/placeholder/400/250',
+      url: 'https://on-the-calendar.netlify.app'
+    },
+        // Future projects will be added here
   ];
 
   return (
