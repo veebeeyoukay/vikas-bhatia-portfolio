@@ -77,7 +77,7 @@ const ProjectsLandingPage: React.FC = () => {
       featured: true,
       imageUrl: '/api/placeholder/400/250',
       url: 'https://parentalcontrols.netlify.app'
-    }
+    },
     {
       id: 'On the Calendar',
       title: 'On the Calendar',
