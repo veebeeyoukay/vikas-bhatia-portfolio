@@ -3,30 +3,14 @@ import { Link } from 'react-router-dom';
 
 const ProjectsLandingPage: React.FC = () => {
   const projects = [
-    {
-      id: 'Recipies from the heart',
-      title: 'Recipies from the heart',
-      description: 'Recipies from the heart is a SaaS application that enables businesses to protect their data and systems from cyber threats.',
-      category: 'Personal Project - SaaS Application',
-      technologies: ['AI', 'Cybersecurity', 'SaaS'],
-      featured: true,
-    },
-    {
+      {
       id: 'MetaFan',
       title: 'Metafan',
       description: 'MetaFan is the first truly social marketplace where collectors across categories discover, showcase, authenticate, and trade items within a vibrant community, powered by AI and Web3 technologies that enhance both the emotional and financial value of collections.',
       category: 'Personal Project - Social Marketplace',
       technologies: ['AI', 'Web3', 'Social Media'],
       featured: true,
-    },
-    {
-      id: 'zenity',
-      title: 'Zenity CISO Strategy',
-      description: 'Comprehensive cybersecurity strategy and implementation plan for Zenity, including risk assessment, compliance framework, and technology roadmap.',
-      category: 'Job Application - CISO',
-      technologies: ['Risk Assessment', 'Compliance', 'Technology Roadmap'],
-      featured: true,
-      imageUrl: '/api/placeholder/400/250'
+      url: 'https://metafan.net'
     },
     {
       id: 'CloseRGC',
@@ -37,16 +21,6 @@ const ProjectsLandingPage: React.FC = () => {
       featured: true,
       imageUrl: 'https://www.closegrc.com/wp-content/uploads/2025/07/CloseGRC-Logo-1.png',
       url: 'https://closegrc.com'
-    },
-    {
-      id: 'NIST CSF Assessment',
-      title: 'NIST CSF Assessment',
-      description: 'Simple NIST CSF Assessment',
-      category: 'Personal Project - NIST CSF Assessment',
-      technologies: ['NIST CSF', 'Assessment', 'Security'],
-      featured: true,
-      imageUrl: '/api/placeholder/400/250',
-      url: 'https://nist-guardian-muse.lovable.app/'
     },
     {
       id: 'wacassa',
@@ -88,7 +62,60 @@ const ProjectsLandingPage: React.FC = () => {
       imageUrl: '/api/placeholder/400/250',
       url: 'https://on-the-calendar.netlify.app'
     },
-        // Future projects will be added here
+    {
+      id: 'Honored Coffee',
+      title: 'Honored Coffee',
+      description: 'To honor military service and sacrifice by creating exceptional coffee experiences while supporting veteran employment and mental health awareness initiatives.',
+      category: 'Collaboration with a Veteran - Coffee Brand',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'AI Guidance', 'Threat Intelligence'],
+      featured: true,
+      url: 'https://honoredcoffee.com/'
+    },  
+    {
+      id: 'KidsQuest Ai',
+      title: 'KidsQuest Ai',
+      description: "KidsQuest turns your child's weekly homework into engaging games. Track progress, celebrate achievements, and make learning fun!",
+      category: 'Personal Project - SaaS Application',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'AI', 'Game Development'],
+      featured: true,
+      url: 'https://kidsquest-ai.netlify.app/' 
+    },
+    {
+      id: 'MugHub',
+      title: 'MugHub',
+      description: "The Ultimate Starbucks Collector Community - Showcase your prized mugs, trade rare finds, and connect with fellow collectors from around the world",
+      category: 'Personal Project - Social Marketplace',
+      technologies: ['React', 'TypeScript', 'Tailwind CSS', 'AI', 'Social Media'],
+      featured: true,
+      url: 'https://mug-share-hub.netlify.app/' 
+    },
+    {
+      id: 'NIST CSF Assessment',
+      title: 'NIST CSF Assessment',
+      description: 'Simple NIST CSF Assessment',
+      category: 'Personal Project - NIST CSF Assessment',
+      technologies: ['NIST CSF', 'Assessment', 'Security'],
+      featured: true,
+      imageUrl: '/api/placeholder/400/250',
+      url: 'https://nist-guardian-muse.lovable.app/'
+    },
+    {
+      id: 'zenity',
+      title: 'Zenity CISO Strategy',
+      description: 'Comprehensive cybersecurity strategy and implementation plan for Zenity, including risk assessment, compliance framework, and technology roadmap.',
+      category: 'Job Application - CISO',
+      technologies: ['Risk Assessment', 'Compliance', 'Technology Roadmap'],
+      featured: true,
+      imageUrl: '/api/placeholder/400/250'
+    },
+    {
+      id: 'Recipies from the heart',
+      title: 'Recipies from the heart',
+      description: 'Recipies from the heart is a SaaS application that enables businesses to protect their data and systems from cyber threats.',
+      category: 'Personal Project - SaaS Application',
+      technologies: ['AI', 'Cybersecurity', 'SaaS'],
+      featured: true,
+    },
   ];
 
   return (
