@@ -10,7 +10,9 @@ const NAV_ITEMS = [
   { label: "Resume", href: resumePDF, isExternal: true },
   { label: "Credentials", href: "#credentials" },
   { label: "Projects", href: "/projects" },
-  { label: "VikasGPT", href: "/vikasgpt" }
+  { label: "VikasGPT", href: "/vikasgpt" },
+  { label: "SOC2", href: "/soc2" },
+  { label: "Dad Jokes", href: "/dad-jokes" }
 ];
 
 const Header = () => {
@@ -47,23 +49,23 @@ const Header = () => {
             {NAV_ITEMS.map((item) => (
               <div key={item.href}>
                 {item.isExternal ? (
-                  <a 
-                    href={item.href} 
-                    target="_blank" 
+                  <a
+                    href={item.href}
+                    target="_blank"
                     rel="noopener noreferrer"
                     className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium"
                   >
                     {item.label}
                   </a>
                 ) : item.href.startsWith('/') ? (
-                  <Link 
+                  <Link
                     to={item.href}
-                    className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium"
+                    className={item.label === "Dad Jokes" ? "text-red-500 hover:text-red-400 transition-colors font-medium" : "text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium"}
                   >
                     {item.label}
                   </Link>
                 ) : (
-                  <button 
+                  <button
                     onClick={() => scrollToSection(item.href.replace('#', ''))}
                     className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium bg-transparent border-none cursor-pointer"
                   >
@@ -101,9 +103,9 @@ const Header = () => {
               {NAV_ITEMS.map((item) => (
                 <div key={item.href}>
                   {item.isExternal ? (
-                    <a 
-                      href={item.href} 
-                      target="_blank" 
+                    <a
+                      href={item.href}
+                      target="_blank"
                       rel="noopener noreferrer"
                       className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium py-2 block"
                       onClick={() => setMobileMenuOpen(false)}
@@ -111,15 +113,15 @@ const Header = () => {
                       {item.label}
                     </a>
                   ) : item.href.startsWith('/') ? (
-                    <Link 
+                    <Link
                       to={item.href}
-                      className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium py-2 block"
+                      className={item.label === "Dad Jokes" ? "text-red-500 hover:text-red-400 transition-colors font-medium py-2 block" : "text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium py-2 block"}
                       onClick={() => setMobileMenuOpen(false)}
                     >
                       {item.label}
                     </Link>
                   ) : (
-                    <button 
+                    <button
                       onClick={() => handleNavClick(item)}
                       className="text-white hover:text-[hsl(var(--zenity-blue))] transition-colors font-medium bg-transparent border-none cursor-pointer py-2 w-full text-left"
                     >
@@ -128,7 +130,7 @@ const Header = () => {
                   )}
                 </div>
               ))}
-              
+
               {/* Mobile Schedule Meeting Button */}
               <Button
                 className="bg-[hsl(var(--zenity-purple-bright))] hover:bg-[hsl(var(--zenity-purple-accent))] text-white w-full mt-4"

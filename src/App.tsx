@@ -4,6 +4,7 @@ import ProjectLayout from './layouts/ProjectLayout';
 import HomePage from './pages/HomePage';
 import ProjectsLandingPage from './pages/ProjectsLandingPage';
 import VikasGPTPage from './pages/VikasGPTPage';
+import SOC2Page from './pages/SOC2Page';
 import MeetingReview from './pages/MeetingReview_SimpleSeucrity_09112025';
 import ZenityProject from './projects/ZenityProject';
 
@@ -14,10 +15,11 @@ function App() {
       <Route path="/" element={<MainLayout><HomePage /></MainLayout>} />
       <Route path="/projects" element={<MainLayout><ProjectsLandingPage /></MainLayout>} />
       <Route path="/vikasgpt" element={<MainLayout><VikasGPTPage /></MainLayout>} />
-      
+      <Route path="/soc2" element={<MainLayout><SOC2Page /></MainLayout>} />
+
       {/* Standalone pages */}
       <Route path="/meetingreview_simplesecurity_09112025" element={<MeetingReview />} />
-      
+
       {/* Project pages with unique styling but persistent nav */}
       <Route path="/projects/zenity" element={<ProjectLayout><ZenityProject /></ProjectLayout>} />
     </Routes>
