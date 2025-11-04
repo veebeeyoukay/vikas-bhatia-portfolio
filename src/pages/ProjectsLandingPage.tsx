@@ -116,6 +116,14 @@ const ProjectsLandingPage: React.FC = () => {
       technologies: ['AI', 'Cybersecurity', 'SaaS'],
       featured: true,
     },
+    {
+      id: 'C6Med-Handover',
+      title: 'C6Med-Handover',
+      description: 'Medical handover management system designed to streamline clinical communication and patient care transitions.',
+      category: 'Personal Project - Healthcare Application',
+      technologies: ['React', 'TypeScript', 'Healthcare', 'Clinical Communication'],
+      featured: true,
+    },
   ];
 
   return (

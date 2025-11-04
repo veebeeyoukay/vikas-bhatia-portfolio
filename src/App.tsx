@@ -7,6 +7,7 @@ import VikasGPTPage from './pages/VikasGPTPage';
 import SOC2Page from './pages/SOC2Page';
 import MeetingReview from './pages/MeetingReview_SimpleSeucrity_09112025';
 import ZenityProject from './projects/ZenityProject';
+import C6MedHandover from './pages/C6MedHandover';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
 
       {/* Project pages with unique styling but persistent nav */}
       <Route path="/projects/zenity" element={<ProjectLayout><ZenityProject /></ProjectLayout>} />
+      <Route path="/projects/C6Med-Handover" element={<ProjectLayout><C6MedHandover /></ProjectLayout>} />
     </Routes>
   );
 }
