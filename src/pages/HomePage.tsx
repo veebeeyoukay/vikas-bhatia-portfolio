@@ -1,6 +1,9 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import HeroSection from '../components/HeroSection';
+import InteractiveResume from '../components/InteractiveResume';
+import PersonalInterests from '../components/PersonalInterests';
+import AIAdvantageSection from '../components/AIAdvantageSection';
 import { companies } from '../data/companies';
 // import { CompanyCloudDemo } from '../components/InteractiveCompanyCloud';
 
@@ -27,9 +30,18 @@ const HomePage: React.FC = () => {
 
 
   return (
-    <div className="space-y-16">
+    <div className="space-y-0">
       {/* Hero Section */}
       <HeroSection />
+
+      {/* Interactive Resume */}
+      <InteractiveResume />
+
+      {/* Personal Interests */}
+      <PersonalInterests />
+
+      {/* AI Advantage Section */}
+      <AIAdvantageSection />
 
       {/* About Section */}
       <section id="about" className="py-16">

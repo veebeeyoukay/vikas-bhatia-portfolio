@@ -5,6 +5,7 @@ import HomePage from './pages/HomePage';
 import ProjectsLandingPage from './pages/ProjectsLandingPage';
 import VikasGPTPage from './pages/VikasGPTPage';
 import SOC2Page from './pages/SOC2Page';
+import WarRoomPage from './pages/WarRoomPage';
 import MeetingReview from './pages/MeetingReview_SimpleSeucrity_09112025';
 import ZenityProject from './projects/ZenityProject';
 import C6MedHandover from './pages/C6MedHandover';
@@ -15,6 +16,7 @@ function App() {
       {/* Main portfolio pages with uniform styling */}
       <Route path="/" element={<MainLayout><HomePage /></MainLayout>} />
       <Route path="/projects" element={<MainLayout><ProjectsLandingPage /></MainLayout>} />
+      <Route path="/war-room" element={<MainLayout><WarRoomPage /></MainLayout>} />
       <Route path="/vikasgpt" element={<MainLayout><VikasGPTPage /></MainLayout>} />
       <Route path="/soc2" element={<MainLayout><SOC2Page /></MainLayout>} />
 

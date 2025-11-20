@@ -8,7 +8,7 @@ import resumePDF from "@/assets/Vikas Bhatia-Resume-External-July 2025.pdf"
 const NAV_ITEMS = [
   { label: "About", href: "#about" },
   { label: "Resume", href: resumePDF, isExternal: true },
-  { label: "Credentials", href: "#credentials" },
+  { label: "War Room", href: "/war-room" },
   { label: "Projects", href: "/projects" },
   { label: "VikasGPT", href: "/vikasgpt" },
   { label: "SOC2", href: "/soc2" },
