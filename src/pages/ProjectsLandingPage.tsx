@@ -13,6 +13,15 @@ const ProjectsLandingPage: React.FC = () => {
       url: 'https://metafan.net'
     },
     {
+      id: 'GATI-2025',
+      title: 'Gorrie Great American Teach In - 2025',
+      description: 'A professional, interactive AI education presentation system built for Gorrie Elementary School\'s Great American Teach-In. This platform provides engaging presentations, live AI demos, parent resources, and comprehensive analytics for educators.',
+      category: 'Personal Project - Education',
+      technologies: ['AI', 'Education', 'Presentation'],
+      featured: true,
+      url: 'https://gorrie-gati2025-ai.netlify.app/'
+    },
+    {
       id: 'CloseRGC',
       title: 'CloseGRC',
       description: 'Close is a Sales Acceleration tool for that enables b2b companies to increase sales velocity by proactively understand their prospects compliance requirements.',
