@@ -44,7 +44,19 @@ const Icon = ({ name, size = 20, color = 'currentColor', className = '' }: { nam
 };
 
 // Mock data
-const MOCK_ISSUES = [
+interface Issue {
+    id: string;
+    title: string;
+    description: string;
+    status: string;
+    priority: string;
+    category: string;
+    affectedRecords: number | null;
+    department: string;
+    dateIdentified: string;
+}
+
+const MOCK_ISSUES: Issue[] = [
     { id: 'ISS-001', title: 'Pager/LinkedIn Field Mismatch', description: 'LinkedIn URLs stored in legacy "Pager" field due to TrackerRMS UK naming conventions. 1,500 records affected.', status: 'resolved', priority: 'high', category: 'data-mapping', affectedRecords: 1500, department: 'all', dateIdentified: '2024-12-01' },
     { id: 'ISS-002', title: 'Candidate/Contact Duplicate ID Merge', description: 'Same ID used for both candidate and contact records caused ~5,000 records to merge incorrectly.', status: 'resolved', priority: 'critical', category: 'data-integrity', affectedRecords: 5000, department: 'recruiting', dateIdentified: '2024-11-15' },
     { id: 'ISS-003', title: 'State/County UK Naming Convention', description: 'TrackerRMS stores US states in "County" field (UK convention). All state data initially missing.', status: 'resolved', priority: 'high', category: 'data-mapping', affectedRecords: 155000, department: 'all', dateIdentified: '2024-11-10' },
