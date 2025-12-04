@@ -186,6 +186,18 @@ const ProjectsLandingPage: React.FC = () => {
       imageUrl: '/api/placeholder/400/250'
     },
     {
+      id: 'atlas',
+      title: 'ATLAS — (AI-Accelerated Transformation & Legacy System Stabilization)',
+      description: "A staffing firm's migration from a legacy UK-based ATS to Dynamics 365 had stalled: 30% of placement records missing, field mapping errors from UK/US naming conventions, and communication gaps with an offshore vendor team.",
+      category: 'Case Study - ATS Migration',
+      type: 'strategic',
+      problem: "A staffing firm's migration from a legacy UK-based ATS to Dynamics 365 had stalled due to missing records, mapping errors, and communication gaps.",
+      solution: "Understood current state, developed requirements & presented solution prototype & roadmap as a single-page web app with Interactive issue tracker, AI data validation prototype, and browser widget concept.",
+      outcome: "Delivered a comprehensive roadmap and interactive prototype in under 4 hours, clarifying requirements and enabling stakeholder buy-in.",
+      technologies: ['React', 'AI Prototype', 'Dynamics 365', 'Data Migration'],
+      featured: true,
+    },
+    {
       id: 'Recipies from the heart',
       title: 'Recipies from the heart',
       description: 'Recipies from the heart is a SaaS application that enables businesses to protect their data and systems from cyber threats.',
