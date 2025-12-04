@@ -97,15 +97,15 @@
 
         // Mock data
         const MOCK_ISSUES = [
-            { id: 'ISS-001', title: 'Pager/LinkedIn Field Mismatch', description: 'LinkedIn URLs stored in legacy "Pager" field due to TrackerRMS UK naming conventions. 1,500 records affected.', status: 'resolved', priority: 'high', category: 'data-mapping', affectedRecords: 1500, department: 'all', dateIdentified: '2024-12-01' },
-            { id: 'ISS-002', title: 'Candidate/Contact Duplicate ID Merge', description: 'Same ID used for both candidate and contact records caused ~5,000 records to merge incorrectly.', status: 'resolved', priority: 'critical', category: 'data-integrity', affectedRecords: 5000, department: 'recruiting', dateIdentified: '2024-11-15' },
-            { id: 'ISS-003', title: 'State/County UK Naming Convention', description: 'TrackerRMS stores US states in "County" field (UK convention). All state data initially missing.', status: 'resolved', priority: 'high', category: 'data-mapping', affectedRecords: 155000, department: 'all', dateIdentified: '2024-11-10' },
-            { id: 'ISS-004', title: 'Placement Count Discrepancies', description: 'JP Morgan Chase shows 11 placements in Dynamics vs 17 in Tracker. E2 Generations shows 7 vs 15.', status: 'in-progress', priority: 'critical', category: 'data-integrity', affectedRecords: null, department: 'backoffice', dateIdentified: '2024-12-05' },
-            { id: 'ISS-005', title: 'Missing Start/End Dates on Placements', description: 'Some placement records missing start and end dates. Required for ADP integration.', status: 'in-progress', priority: 'medium', category: 'data-completeness', affectedRecords: null, department: 'backoffice', dateIdentified: '2024-12-05' },
-            { id: 'ISS-006', title: 'Work Department Not Mapped', description: 'Work department field needed for ADP payroll not appearing on company records.', status: 'in-progress', priority: 'high', category: 'data-mapping', affectedRecords: 35, department: 'accounting', dateIdentified: '2024-12-05' },
-            { id: 'ISS-007', title: 'Jobs Not Visible Without Manual Toggle', description: 'Open jobs require manual "Open" toggle in migrated data tab to appear in job lists.', status: 'pending', priority: 'medium', category: 'usability', affectedRecords: null, department: 'sales', dateIdentified: '2024-12-03' },
-            { id: 'ISS-008', title: 'Available Start Date Field Broken', description: 'Available start date field on submission form not functioning during candidate screening.', status: 'pending', priority: 'low', category: 'functionality', affectedRecords: null, department: 'recruiting', dateIdentified: '2024-12-05' },
-            { id: 'ISS-009', title: 'SharePoint Document Migration Pending', description: 'Historical documents not yet visible. SharePoint integration scheduled as final migration step.', status: 'pending', priority: 'medium', category: 'integration', affectedRecords: null, department: 'all', dateIdentified: '2024-11-01' }
+            { id: 'ISS-001', title: 'Pager/LinkedIn Field Mismatch', description: 'LinkedIn URLs stored in legacy "Pager" field due to TrackerRMS UK naming conventions. 1,500 records affected.', status: 'resolved', priority: 'high', category: 'data-mapping', affectedRecords: 1500, department: 'all', dateIdentified: '2025-12-01' },
+            { id: 'ISS-002', title: 'Candidate/Contact Duplicate ID Merge', description: 'Same ID used for both candidate and contact records caused ~5,000 records to merge incorrectly.', status: 'resolved', priority: 'critical', category: 'data-integrity', affectedRecords: 5000, department: 'recruiting', dateIdentified: '2025-11-15' },
+            { id: 'ISS-003', title: 'State/County UK Naming Convention', description: 'TrackerRMS stores US states in "County" field (UK convention). All state data initially missing.', status: 'resolved', priority: 'high', category: 'data-mapping', affectedRecords: 155000, department: 'all', dateIdentified: '2025-11-10' },
+            { id: 'ISS-004', title: 'Placement Count Discrepancies', description: 'JP Morgan Chase shows 11 placements in Dynamics vs 17 in Tracker. E2 Generations shows 7 vs 15.', status: 'in-progress', priority: 'critical', category: 'data-integrity', affectedRecords: null, department: 'backoffice', dateIdentified: '2025-12-05' },
+            { id: 'ISS-005', title: 'Missing Start/End Dates on Placements', description: 'Some placement records missing start and end dates. Required for ADP integration.', status: 'in-progress', priority: 'medium', category: 'data-completeness', affectedRecords: null, department: 'backoffice', dateIdentified: '2025-12-05' },
+            { id: 'ISS-006', title: 'Work Department Not Mapped', description: 'Work department field needed for ADP payroll not appearing on company records.', status: 'in-progress', priority: 'high', category: 'data-mapping', affectedRecords: 35, department: 'accounting', dateIdentified: '2025-12-05' },
+            { id: 'ISS-007', title: 'Jobs Not Visible Without Manual Toggle', description: 'Open jobs require manual "Open" toggle in migrated data tab to appear in job lists.', status: 'pending', priority: 'medium', category: 'usability', affectedRecords: null, department: 'sales', dateIdentified: '2025-12-03' },
+            { id: 'ISS-008', title: 'Available Start Date Field Broken', description: 'Available start date field on submission form not functioning during candidate screening.', status: 'pending', priority: 'low', category: 'functionality', affectedRecords: null, department: 'recruiting', dateIdentified: '2025-12-05' },
+            { id: 'ISS-009', title: 'SharePoint Document Migration Pending', description: 'Historical documents not yet visible. SharePoint integration scheduled as final migration step.', status: 'pending', priority: 'medium', category: 'integration', affectedRecords: null, department: 'all', dateIdentified: '2025-11-01' }
         ];
 
         const MOCK_VALIDATION = [
@@ -241,7 +241,7 @@
                             </button>
                         </form>
                         <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '12px', marginTop: '30px' }}>
-                            Prepared by Vikas Bhatia • December 2024
+                            Prepared by Vikas Bhatia • December 2025
                         </p>
                     </div>
                 </div>
@@ -328,7 +328,7 @@
                         <span style={{ color: BRAND.grey }}>To:</span><span>Dan Jones, Christine Horan</span>
                         <span style={{ color: BRAND.grey }}>From:</span><span>Vikas Bhatia</span>
                         <span style={{ color: BRAND.grey }}>Subject:</span><span style={{ fontWeight: '600' }}>ATLAS Project - ATS Migration Assessment & Stabilization Plan</span>
-                        <span style={{ color: BRAND.grey }}>Date:</span><span>December 5, 2024</span>
+                        <span style={{ color: BRAND.grey }}>Date:</span><span>December 5, 2025</span>
                     </div>
                     <div style={{ fontSize: '14px', lineHeight: '1.8' }}>
                         <p style={{ margin: '0 0 16px' }}>Dan, Christine,</p>
@@ -726,7 +726,7 @@
                         <Icon name="Calendar" size={18} color="white" /> Schedule a Call
                     </a>
                 </div>
-                <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '12px', marginTop: '40px' }}>© 2024 Vikas Bhatia • Prepared for IT Resources Corp</p>
+                <p style={{ color: 'rgba(255,255,255,0.3)', fontSize: '12px', marginTop: '40px' }}>© 2025 Vikas Bhatia • Prepared for IT Resources Corp</p>
             </div>
         );
 

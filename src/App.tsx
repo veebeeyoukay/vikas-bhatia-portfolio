@@ -6,6 +6,7 @@ import ProjectsLandingPage from './pages/ProjectsLandingPage';
 import VikasGPTPage from './pages/VikasGPTPage';
 import SOC2Page from './pages/SOC2Page';
 import WarRoomPage from './pages/WarRoomPage';
+import DadJokesPage from './pages/DadJokesPage';
 import MeetingReview from './pages/MeetingReview_SimpleSeucrity_09112025';
 import ZenityProject from './projects/ZenityProject';
 import AtlasProject from './projects/atlas/AtlasProject';
@@ -20,6 +21,7 @@ function App() {
       <Route path="/war-room" element={<MainLayout><WarRoomPage /></MainLayout>} />
       <Route path="/vikasgpt" element={<MainLayout><VikasGPTPage /></MainLayout>} />
       <Route path="/soc2" element={<MainLayout><SOC2Page /></MainLayout>} />
+      <Route path="/dad-jokes" element={<MainLayout><DadJokesPage /></MainLayout>} />
 
       {/* Standalone pages */}
       <Route path="/meetingreview_simplesecurity_09112025" element={<MeetingReview />} />
