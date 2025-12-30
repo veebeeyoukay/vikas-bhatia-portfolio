@@ -11,6 +11,11 @@ import MeetingReview from './pages/MeetingReview_SimpleSeucrity_09112025';
 import ZenityProject from './projects/ZenityProject';
 import AtlasProject from './projects/atlas/AtlasProject';
 import C6MedHandover from './pages/C6MedHandover';
+import HandymanLanding from './pages/landing/HandymanLanding';
+import AVLanding from './pages/landing/AVLanding';
+import PoolLanding from './pages/landing/PoolLanding';
+import GarageLanding from './pages/landing/GarageLanding';
+import AITransformationHub from './pages/AITransformationHub';
 
 function App() {
   return (
@@ -25,6 +30,15 @@ function App() {
 
       {/* Standalone pages */}
       <Route path="/meetingreview_simplesecurity_09112025" element={<MeetingReview />} />
+
+      {/* AI Transformation Demo Project */}
+      <Route path="/ai-transformation" element={<AITransformationHub />} />
+
+      {/* Tampa Service Landing Pages */}
+      <Route path="/tampa-handyman" element={<HandymanLanding />} />
+      <Route path="/tampa-av" element={<AVLanding />} />
+      <Route path="/tampa-pool" element={<PoolLanding />} />
+      <Route path="/tampa-garage" element={<GarageLanding />} />
 
       {/* Project pages with unique styling but persistent nav */}
       <Route path="/projects/zenity" element={<ProjectLayout><ZenityProject /></ProjectLayout>} />

@@ -24,6 +24,19 @@ const ProjectsLandingPage: React.FC = () => {
 
   const projects: Project[] = [
     {
+      id: 'ai-transformation',
+      title: 'AI-Powered Business Transformation Demo',
+      description: 'Complete AI transformation platform demonstrating automated lead generation, intelligent qualification, and business partnership network across four virtual service businesses in Tampa Bay.',
+      category: 'Innovation Demo - AI Transformation',
+      type: 'innovation',
+      problem: 'Traditional service businesses struggle with lead generation, relying on manual processes and limited availability, missing opportunities due to poor qualification and lack of technical expertise.',
+      solution: 'Built end-to-end AI platform with voice/SMS agents for 24/7 lead capture, automated qualification workflows, smart routing to partner businesses, and business prospecting automation.',
+      outcome: 'Fully functional demonstration platform with 4 live service businesses, showing measurable ROI potential and serving as a sales tool for AI consulting services.',
+      technologies: ['AI Agents', 'React', 'TypeScript', 'Neon PostgreSQL', 'n8n Automation', 'Lindy.ai'],
+      featured: true,
+      url: '/ai-transformation'
+    },
+    {
       id: 'MetaFan',
       title: 'Metafan',
       description: 'MetaFan is the first truly social marketplace where collectors across categories discover, showcase, authenticate, and trade items within a vibrant community, powered by AI and Web3 technologies that enhance both the emotional and financial value of collections.',

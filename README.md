@@ -1,182 +1,241 @@
-# Vikas Bhatia Portfolio
+# Vikas Bhatia - Portfolio & AI Transformation Demo
 
-A modern, responsive portfolio website built with React, TypeScript, and Tailwind CSS showcasing Vikas Bhatia's expertise in cybersecurity, technology leadership, and digital transformation.
+Personal portfolio website showcasing cybersecurity executive expertise and AI-powered business transformation capabilities.
 
-## 🚀 Features
+## 🚀 Overview
 
-- **Modern, responsive design** with beautiful UI components
-- **Interactive portfolio sections** including hero, about, services, and contact
-- **Project showcase** with detailed case studies (including Zenity CISO Strategy)
-- **Professional experience** and technical skills visualization
-- **Contact form** with integrated scheduling
-- **Multi-page routing** with React Router
-- **Mobile-first responsive design**
+This repository contains:
+1. **Professional Portfolio** - Cybersecurity executive portfolio with 20+ years experience
+2. **AI Transformation Demo** - Complete AI-powered lead generation platform with 4 live service businesses
+
+## 🎯 AI Transformation Project
+
+**Live Demo:** [/ai-transformation](https://vikasbhatia.info/ai-transformation)
+
+A complete demonstration platform showing how AI can transform premium service businesses through automated lead generation, intelligent qualification, and seamless handoff processes.
+
+### Four Premium Service Businesses
+
+1. **SmartHome Tampa** - Premium smart home automation (`/tampa-handyman`)
+2. **TechEase Elite** - Enterprise home networks & digital safety (`/tampa-av`)
+3. **AquaTech Automation** - Smart pool automation systems (`/tampa-pool`)
+4. **GarageTech Pro** - Smart garage & home inventory (`/tampa-garage`)
+
+**Target Market:** Affluent South Tampa/Davis Islands homeowners ($300k+ household income)
+**Price Range:** $500-6000 per project (vs traditional $50-600)
+**Focus:** Time-saving technical services, not physical labor
+
+### Features
+- 4 live service business landing pages with lead capture
+- AI-powered lead qualification (Lindy.ai - planned)
+- Automated workflow orchestration (n8n - planned)
+- Enterprise-grade database (Neon PostgreSQL)
+- Real-time lead routing and notifications
+
+### Implementation Status
+- ✅ **Phase 1-2 Complete:** Database schema + Frontend landing pages
+- 🔄 **Phase 3 In Progress:** Backend API ready, AI agents need configuration
+- ⏳ **Phase 4-9 Planned:** Full automation workflows and business prospecting
+
+See `_aiwk/README.md` for complete AI transformation documentation.
 
 ## 🛠️ Tech Stack
 
-- **Frontend Framework:** React 18 with TypeScript
-- **Styling:** Tailwind CSS with custom animations
-- **UI Components:** 
-  - Radix UI (Navigation Menu, Dropdown Menu)
-  - Lucide React Icons
-  - Font Awesome Icons
-- **Routing:** React Router DOM
-- **Build Tool:** Vite
-- **Package Manager:** npm
-- **Styling Utilities:** 
-  - class-variance-authority
-  - clsx
-  - tailwind-merge
-  - tailwindcss-animate
+### Frontend
+- React 18 + TypeScript
+- Vite 5.1.6
+- Tailwind CSS + Shadcn/UI components
+- React Router DOM 6
+- Framer Motion (animations)
+- Lucide React Icons
 
-## 📋 Prerequisites
+### Backend
+- Netlify Functions (serverless API)
+- Neon PostgreSQL (serverless database)
+- @neondatabase/serverless driver
 
-- Node.js (Latest LTS version recommended)
-- npm (comes with Node.js)
-
-## 🚀 Getting Started
-
-1. Clone the repository:
-   ```bash
-   git clone [repository-url]
-   cd vikas-bhatia-portfolio
-   ```
-
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
-
-3. Start the development server:
-   ```bash
-   npm run dev
-   ```
-
-4. Open your browser and visit `http://localhost:5173`
-
-## 🏗️ Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run preview` - Preview production build
-- `npm run lint` - Run ESLint
-- `npm run format` - Format code with Prettier
+### AI & Automation (Planned)
+- Lindy.ai - Voice/SMS AI agents
+- n8n - Workflow automation
+- Twilio - SMS notifications
+- Google Maps API - Business prospecting
 
 ## 📁 Project Structure
 
 ```
 vikas-bhatia-portfolio/
 ├── src/
-│   ├── app/                    # App-level components
-│   ├── components/             # Reusable UI components
-│   │   ├── ui/                # Base UI components (buttons, cards, etc.)
-│   │   └── ...                # Feature-specific components
-│   ├── layouts/               # Layout components
-│   │   ├── MainLayout.tsx     # Main portfolio layout
-│   │   └── ProjectLayout.tsx  # Project-specific layout
-│   ├── pages/                 # Page components
-│   │   ├── HomePage.tsx       # Main portfolio page
-│   │   └── ProjectsLandingPage.tsx
-│   ├── projects/              # Project-specific content
-│   │   └── zenity/           # Zenity CISO project
-│   ├── lib/                   # Utility functions
-│   └── main.tsx              # App entry point
-├── components/                # Shared components (Timeline)
-├── public/                   # Static assets
-├── tailwind.config.ts        # Tailwind configuration
-├── vite.config.ts           # Vite configuration
-└── tsconfig.json            # TypeScript configuration
+│   ├── components/
+│   │   ├── ui/                      # Shadcn/UI base components
+│   │   └── landing/                 # AI transformation components
+│   ├── pages/
+│   │   ├── landing/                 # 4 service business pages
+│   │   ├── AITransformationHub.tsx  # Main AI hub page
+│   │   ├── HomePage.tsx             # Portfolio home
+│   │   └── ProjectsLandingPage.tsx  # Projects showcase
+│   ├── projects/                    # Project case studies
+│   │   ├── zenity/                  # Zenity CISO project
+│   │   └── atlas/                   # ATLAS project
+│   ├── config/
+│   │   └── businesses.ts            # 4 business configurations
+│   ├── types/
+│   │   ├── landing.ts               # Landing page types
+│   │   └── database.ts              # Database model types
+│   └── hooks/
+│       └── useLeadSubmission.ts     # Lead submission logic
+├── netlify/functions/               # Serverless API
+│   ├── lead-webhook/                # Lead capture endpoint
+│   └── utils/db.ts                  # Database connection
+├── migrations/                      # Database schema
+│   ├── 001_initial_schema.sql
+│   └── 002_indexes_and_triggers.sql
+└── _aiwk/                          # AI transformation docs
+    ├── docs/                        # Implementation guides
+    ├── plan/                        # Project plans
+    └── prd/                         # Requirements & briefs
 ```
 
-## 🎨 Key Components
+## 🚀 Getting Started
 
-### Portfolio Sections
-- **Hero Section** - Introduction and call-to-action
-- **About Section** - Professional background and journey
-- **Services Section** - Cybersecurity and technology services
-- **Skills & Expertise** - Technical skills and industry experience
-- **Projects** - Case studies and portfolio work
-- **Contact Form** - Professional contact and scheduling
+### Prerequisites
+- Node.js (Latest LTS version)
+- npm (comes with Node.js)
+- Netlify CLI (for local function testing): `npm install -g netlify-cli`
 
-### Project Showcase
-- **Zenity CISO Strategy** - Comprehensive cybersecurity strategy case study
-- **Timeline Components** - Interactive project history visualization
-- **Leadership Objectives** - Strategic planning and implementation
+### Installation
 
-## 🔧 Configuration
+```bash
+# Clone repository
+git clone [repository-url]
+cd vikas-bhatia-portfolio
 
-### Tailwind CSS
-The project uses Tailwind CSS for styling with custom animations and responsive design. Configuration can be found in `tailwind.config.ts`.
+# Install dependencies
+npm install
 
-### TypeScript
-TypeScript configuration is managed through `tsconfig.json` with strict type checking enabled.
+# Start development server
+npm run dev
+# Visit: http://localhost:5173
 
-### Vite
-Build tool configuration in `vite.config.ts` with React plugin and optimized build settings.
+# Start with Netlify Functions
+netlify dev
+# Functions: http://localhost:8888/.netlify/functions/
+```
+
+### Environment Variables
+
+Copy `.env.local.template` to `.env.local` and configure:
+
+```env
+# Neon Database
+DATABASE_URL=postgresql://...
+
+# AI Services (when configured)
+LINDY_API_KEY=xxx
+N8N_NEW_LEAD_WEBHOOK=https://...
+TWILIO_ACCOUNT_SID=xxx
+```
+
+## 🏗️ Available Scripts
+
+- `npm run dev` - Start development server
+- `npm run build` - Build for production (TypeScript + Vite)
+- `npm run preview` - Preview production build
+- `npm run lint` - Run ESLint
+- `npm run format` - Format code with Prettier
+
+## 🗄️ Database Setup
+
+The project uses Neon PostgreSQL (serverless). To deploy the schema:
+
+1. Go to [Neon Console](https://console.neon.tech)
+2. Open SQL Editor
+3. Run `migrations/001_initial_schema.sql`
+4. Run `migrations/002_indexes_and_triggers.sql`
+
+See `_aiwk/plan/database-migration-notes.md` for details.
+
+## 🚀 Deployment
 
 ### Netlify Configuration
 
-#### Build Settings (Configure in Netlify UI)
-1. Navigate to **Project configuration > Build & deploy > Continuous deployment > Build settings**
-2. Configure the following:
-   - **Base directory**: Leave empty (defaults to repository root `/`)
-   - **Build command**: `npm run build`
-   - **Publish directory**: `dist`
-   - **Functions directory**: `netlify/functions` (if using Netlify Functions)
+**Build Settings:**
+- Build command: `npm run build`
+- Publish directory: `dist`
+- Functions directory: `netlify/functions`
 
-#### netlify.toml Configuration (Repository Root)
-Create a `netlify.toml` file in your repository root to handle SPA routing and prevent 404 errors:
+**Environment Variables:**
+Set in Netlify Dashboard → Site Settings → Environment Variables
 
+**netlify.toml** (handles SPA routing):
 ```toml
 [build]
   command = "npm run build"
   publish = "dist"
+  functions = "netlify/functions"
 
-# CRITICAL: This redirect rule fixes 404 errors for React Router
-# It ensures all routes are handled by the client-side router
 [[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200
 ```
 
-#### Troubleshooting 404 Errors
-1. **Verify the redirect rule** in `netlify.toml` is present (see above)
-2. **Check build output**: Ensure `dist` directory contains `index.html` and all assets
-3. **Clear cache and redeploy**: In Netlify UI, trigger a "Clear cache and deploy site"
-4. **Verify React Router paths**: Ensure all routes in your app match deployed paths
-5. **Check deploy logs**: Look for any build errors or warnings in Netlify deploy logs
+### Deploy Commands
 
-#### Additional Netlify Features
-- **Deploy Previews**: Automatically generated for pull requests
-- **Branch Deploys**: Can be configured for staging branches
-- **Environment Variables**: Set in Netlify UI under "Environment variables"
-- **Deploy Notifications**: Configure webhooks for deployment status
+```bash
+# Build locally first
+npm run build
+
+# Deploy to Netlify
+netlify deploy --prod
+```
+
+## 📊 AI Transformation Routes
+
+- `/ai-transformation` - Main hub and project overview
+- `/tampa-handyman` - SmartHome Tampa (smart home automation)
+- `/tampa-av` - TechEase Elite (enterprise networks & digital safety)
+- `/tampa-pool` - AquaTech Automation (smart pool systems)
+- `/tampa-garage` - GarageTech Pro (smart garage & inventory)
+
+## 📚 Documentation
+
+### AI Transformation Project
+- **Quick Start:** `_aiwk/README.md`
+- **Action Items:** `_aiwk/todos.md`
+- **Implementation Guide:** `_aiwk/docs/implementation-guide.md`
+- **Market Positioning:** `_aiwk/docs/PREMIUM_REPOSITIONING.md`
+- **Full Plan:** `_aiwk/plan/implementation-plan.md`
+- **PRD:** `_aiwk/prd/ai-powered-bus-transformation.md`
+
+### Portfolio
+- **Setup Guide:** `CLAUDE.md` (for Claude Code)
 
 ## 🎯 Portfolio Highlights
 
-- **20+ years** of cybersecurity and technology leadership experience
-- **Fortune 500** and startup experience across multiple industries
-- **Professional certifications** including CISSP, CISM, CRISC, CISA, PMP
-- **Industry expertise** in Financial Services, Healthcare, Technology, Manufacturing, Retail, and Government
-- **Awards and recognition** from Security Magazine, CISO Platform, and RSA Conference
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
-## 📝 License
-
-This project is proprietary and confidential. All rights reserved.
-
-## 👤 About Vikas Bhatia
-
-Vikas Bhatia is a cybersecurity executive and strategic technology leader with over 20 years of experience transforming organizations through innovative security solutions and digital transformation. His expertise spans cybersecurity strategy, risk management, security architecture, and executive coaching.
+- **20+ years** cybersecurity and technology leadership
+- **Fortune 500** and startup experience
+- **Professional certifications:** CISSP, CISM, CRISC, CISA, PMP, CCISO, CIPP/US
+- **Industry expertise:** Financial Services, Healthcare, Technology, Manufacturing
+- **Awards:** Security Magazine Top CISO, CISO Platform Top 50
 
 ## 🔐 Security
 
-This portfolio website implements various security measures and follows best practices for web development. For security concerns, please contact through the provided contact information. 
+This portfolio implements security best practices:
+- TypeScript strict mode
+- Input validation on all forms
+- CORS configuration
+- Environment variable protection
+- Serverless architecture (Netlify Functions)
+
+## 📝 License
+
+Private - Vikas Bhatia Portfolio
+
+## 👤 About Vikas Bhatia
+
+Vikas Bhatia is a cybersecurity executive and strategic technology leader with over 20 years of experience transforming organizations through innovative security solutions and AI-powered business transformation.
+
+**Contact:**
+- Website: https://vikasbhatia.info
+- AI Demo: https://vikasbhatia.info/ai-transformation
+- Schedule Meeting: [Motion Calendar](https://app.usemotion.com/meet/vikas-bhatia/JP-meeting)
