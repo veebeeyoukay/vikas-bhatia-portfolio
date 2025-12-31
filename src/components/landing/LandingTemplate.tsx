@@ -1,9 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { BusinessConfig } from '@/types/landing';
-import ServiceForm from './ServiceForm';
 import ServiceCard from './ServiceCard';
 import CTASection from './CTASection';
+import FAQSection from './FAQSection';
+import SEO from '@/components/SEO';
+import { getBusinessSEO } from '@/utils/seo-config';
+import { generateLocalBusinessSchema } from '@/utils/schema-markup';
 import * as Icons from 'lucide-react';
 
 interface LandingTemplateProps {
@@ -13,8 +16,21 @@ interface LandingTemplateProps {
 const LandingTemplate: React.FC<LandingTemplateProps> = ({ config }) => {
   const primaryStyle = { backgroundColor: config.primaryColor };
 
+  // Get SEO configuration for this business
+  const seoConfig = getBusinessSEO(config.type);
+  const schemaMarkup = generateLocalBusinessSchema(config.type, window.location.origin);
+  const baseUrl = window.location.origin;
+
   return (
     <div className="min-h-screen bg-gray-50">
+      {/* SEO Meta Tags */}
+      <SEO
+        title={seoConfig.title}
+        description={seoConfig.description}
+        canonical={seoConfig.canonical ? `${baseUrl}${seoConfig.canonical}` : undefined}
+        ogImage={seoConfig.ogImage}
+        schemaMarkup={schemaMarkup}
+      />
       {/* Breadcrumb */}
       <div className="bg-gray-100 border-b border-gray-200 py-3 px-4">
         <div className="max-w-6xl mx-auto">
@@ -71,8 +87,105 @@ const LandingTemplate: React.FC<LandingTemplateProps> = ({ config }) => {
         </div>
       </header>
 
+      {/* Trust Signals Section */}
+      {config.trustSignals && config.trustSignals.length > 0 && (
+        <section className="py-12 px-4 bg-white border-b border-gray-200">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-6">
+              {config.trustSignals.map((signal, index) => (
+                <div key={index} className="text-center">
+                  <div className="flex justify-center mb-2">
+                    <Icons.CheckCircle2 size={24} style={{ color: config.primaryColor }} />
+                  </div>
+                  <p className="text-sm font-medium text-gray-700">{signal}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* About Section */}
+      {config.aboutSection && (
+        <section className="py-16 px-4 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-4">
+              {config.aboutSection.headline}
+            </h2>
+            <div className="prose prose-lg max-w-none text-gray-600 mb-12">
+              {config.aboutSection.bodyParagraphs.map((paragraph, index) => (
+                <p key={index} className="mb-4">
+                  {paragraph}
+                </p>
+              ))}
+            </div>
+            {config.aboutSection.keyPoints && config.aboutSection.keyPoints.length > 0 && (
+              <div className="grid md:grid-cols-2 gap-8 mt-12">
+                {config.aboutSection.keyPoints.map((point, index) => (
+                  <div key={index} className="flex gap-4">
+                    <div className="flex-shrink-0">
+                      <div
+                        className="w-10 h-10 rounded-full flex items-center justify-center"
+                        style={{ backgroundColor: `${config.primaryColor}20` }}
+                      >
+                        <Icons.Star size={20} style={{ color: config.primaryColor }} />
+                      </div>
+                    </div>
+                    <div>
+                      <h3 className="font-bold text-lg mb-2">{point.title}</h3>
+                      <p className="text-gray-600">{point.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            )}
+          </div>
+        </section>
+      )}
+
+      {/* Service Areas Section */}
+      {config.serviceAreas && config.serviceAreas.length > 0 && (
+        <section className="py-12 px-4 bg-gray-50">
+          <div className="max-w-6xl mx-auto text-center">
+            <h2 className="text-2xl font-bold mb-6">Proudly Serving South Tampa</h2>
+            <div className="flex flex-wrap justify-center gap-4">
+              {config.serviceAreas.map((area, index) => (
+                <div
+                  key={index}
+                  className="inline-flex items-center gap-2 bg-white px-4 py-2 rounded-full shadow-sm border border-gray-200"
+                >
+                  <Icons.MapPin size={16} style={{ color: config.primaryColor }} />
+                  <span className="font-medium text-gray-700">{area}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
+      {/* Geographic Differentiators Section */}
+      {config.geographicDifferentiators && config.geographicDifferentiators.length > 0 && (
+        <section className="py-16 px-4 bg-white">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-8">
+              Tampa-Specific Expertise
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              {config.geographicDifferentiators.map((diff, index) => (
+                <div key={index} className="flex gap-3 items-start">
+                  <div className="flex-shrink-0 mt-1">
+                    <Icons.MapPin size={20} style={{ color: config.primaryColor }} />
+                  </div>
+                  <p className="text-gray-700">{diff}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      )}
+
       {/* Services Section */}
-      <section className="py-16 px-4">
+      <section className="py-16 px-4 bg-gray-50">
         <div className="max-w-6xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-12">Our Services</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -87,49 +200,134 @@ const LandingTemplate: React.FC<LandingTemplateProps> = ({ config }) => {
         </div>
       </section>
 
-      {/* Lead Form Section */}
+      {/* Modern Engagement Options */}
       <section
         className="py-16 px-4"
         style={{ backgroundColor: `${config.primaryColor}10` }}
       >
-        <div className="max-w-2xl mx-auto">
+        <div className="max-w-5xl mx-auto">
           <h2 className="text-3xl font-bold text-center mb-4">
-            Get Your Free Quote
+            Let's Talk About Your Project
           </h2>
-          <p className="text-center text-gray-600 mb-8">
-            Tell us about your project and we'll get back to you within 24 hours.
+          <p className="text-center text-gray-600 mb-12">
+            Choose how you'd like to connect with us
           </p>
-          <ServiceForm
-            businessType={config.type}
-            services={config.services}
-            primaryColor={config.primaryColor}
-          />
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* Option 1: Call Me */}
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div
+                className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
+                style={{ backgroundColor: `${config.primaryColor}20` }}
+              >
+                <Icons.Phone size={32} style={{ color: config.primaryColor }} />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-3">Call Me Now</h3>
+              <p className="text-gray-600 text-center text-sm mb-6">
+                Speak with a South Tampa expert immediately
+              </p>
+              <a
+                href={`tel:${config.phoneNumber}`}
+                className="block w-full text-center font-semibold py-3 px-6 rounded-lg text-white transition-all hover:opacity-90"
+                style={{ backgroundColor: config.primaryColor }}
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <Icons.PhoneCall size={20} />
+                  <span>Call Now</span>
+                </div>
+              </a>
+              <p className="text-xs text-gray-500 text-center mt-3">
+                Available 7 days/week
+              </p>
+            </div>
+
+            {/* Option 2: Text/WhatsApp */}
+            <div className="bg-white rounded-xl shadow-lg border-2 border-gray-200 p-8 hover:shadow-xl transition-all hover:-translate-y-1">
+              <div
+                className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
+                style={{ backgroundColor: `${config.primaryColor}20` }}
+              >
+                <Icons.MessageSquare size={32} style={{ color: config.primaryColor }} />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-3">Text Me</h3>
+              <p className="text-gray-600 text-center text-sm mb-6">
+                Quick responses via SMS or WhatsApp
+              </p>
+              <a
+                href={`sms:${config.phoneNumber}?body=Hi, I'm interested in ${config.name} services. `}
+                className="block w-full text-center font-semibold py-3 px-6 rounded-lg text-white transition-all hover:opacity-90 mb-2"
+                style={{ backgroundColor: config.primaryColor }}
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <Icons.MessageCircle size={20} />
+                  <span>Text {config.smsKeyword}</span>
+                </div>
+              </a>
+              <a
+                href={`https://wa.me/${config.phoneNumber.replace(/[^0-9]/g, '')}?text=Hi, I'm interested in ${config.name} services.`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="block w-full text-center font-semibold py-3 px-6 rounded-lg border-2 transition-all hover:bg-gray-50"
+                style={{ borderColor: config.primaryColor, color: config.primaryColor }}
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <Icons.MessageCircle size={20} />
+                  <span>WhatsApp</span>
+                </div>
+              </a>
+              <p className="text-xs text-gray-500 text-center mt-3">
+                Usually respond in &lt;15 min
+              </p>
+            </div>
+
+            {/* Option 3: AI Chat Bot */}
+            <div className="bg-white rounded-xl shadow-lg border-2 border-green-400 p-8 hover:shadow-xl transition-all hover:-translate-y-1 relative">
+              <div className="absolute -top-3 -right-3 bg-green-500 text-white text-xs font-bold px-3 py-1 rounded-full">
+                INSTANT
+              </div>
+              <div
+                className="w-16 h-16 rounded-full mx-auto mb-4 flex items-center justify-center"
+                style={{ backgroundColor: `${config.primaryColor}20` }}
+              >
+                <Icons.Bot size={32} style={{ color: config.primaryColor }} />
+              </div>
+              <h3 className="text-xl font-bold text-center mb-3">AI Assistant</h3>
+              <p className="text-gray-600 text-center text-sm mb-6">
+                Get instant answers and ROI calculations
+              </p>
+              <button
+                onClick={() => {
+                  // TODO: Integrate with AI chat bot
+                  alert('AI Chat Bot integration coming soon! For now, please call or text us.');
+                }}
+                className="block w-full text-center font-semibold py-3 px-6 rounded-lg text-white transition-all hover:opacity-90"
+                style={{ backgroundColor: config.primaryColor }}
+              >
+                <div className="flex items-center justify-center gap-2">
+                  <Icons.Sparkles size={20} />
+                  <span>Chat with AI</span>
+                </div>
+              </button>
+              <p className="text-xs text-gray-500 text-center mt-3">
+                Available 24/7 • No waiting
+              </p>
+            </div>
+          </div>
+
+          {/* Trust Badge */}
+          <div className="mt-12 text-center">
+            <div className="inline-flex items-center gap-2 bg-white px-6 py-3 rounded-full shadow-sm border border-gray-200">
+              <Icons.Shield size={20} style={{ color: config.primaryColor }} />
+              <span className="text-sm font-medium text-gray-700">
+                No pressure. No obligation. Just helpful advice.
+              </span>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* FAQ Section */}
-      <section className="py-16 px-4">
-        <div className="max-w-3xl mx-auto">
-          <h2 className="text-3xl font-bold text-center mb-12">
-            Frequently Asked Questions
-          </h2>
-          <div className="space-y-4">
-            {config.faqs.map((faq, index) => (
-              <details
-                key={index}
-                className="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden"
-              >
-                <summary className="px-6 py-4 cursor-pointer font-medium hover:bg-gray-50">
-                  {faq.question}
-                </summary>
-                <div className="px-6 py-4 border-t border-gray-100 text-gray-600">
-                  {faq.answer}
-                </div>
-              </details>
-            ))}
-          </div>
-        </div>
-      </section>
+      <FAQSection faqs={config.faqs} primaryColor={config.primaryColor} />
 
       {/* CTA Section */}
       <CTASection config={config} />
@@ -138,8 +336,15 @@ const LandingTemplate: React.FC<LandingTemplateProps> = ({ config }) => {
       <footer className="bg-gray-900 text-white py-8 px-4">
         <div className="max-w-6xl mx-auto text-center">
           <p className="text-xl font-semibold mb-2">{config.name}</p>
-          <p className="text-gray-400 mb-4">Serving Tampa Bay Area</p>
-          <div className="flex justify-center gap-6">
+          {config.serviceAreas && config.serviceAreas.length > 0 ? (
+            <p className="text-gray-400 mb-4">
+              Serving {config.serviceAreas.slice(0, 3).join(', ')}
+              {config.serviceAreas.length > 3 && ' and more'}
+            </p>
+          ) : (
+            <p className="text-gray-400 mb-4">Serving Tampa Bay Area</p>
+          )}
+          <div className="flex justify-center gap-6 mb-4">
             <a href={`tel:${config.phoneNumber}`} className="hover:text-gray-300">
               <Icons.Phone size={24} />
             </a>
@@ -147,6 +352,11 @@ const LandingTemplate: React.FC<LandingTemplateProps> = ({ config }) => {
               <Icons.MessageSquare size={24} />
             </a>
           </div>
+          {config.priceRange && (
+            <p className="text-sm text-gray-500">
+              Premium Service • {config.priceRange}
+            </p>
+          )}
         </div>
       </footer>
     </div>

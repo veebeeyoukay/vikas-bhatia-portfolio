@@ -13,8 +13,7 @@
 
 ### Connection String
 ```
-DATABASE_URL=postgresql://neondb_owner:npg_7LJM9ruywBQc@ep-wispy-poetry-ah9dq3xi-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require
-```
+DATABASE_URL= STORED IN .ENV & NETLIFY
 
 ### Key Technical Changes
 

@@ -49,7 +49,7 @@ This plan outlines the complete implementation of a lead generation platform for
 5. Set up database backups (Neon provides automatic backups)
 
 **Database Connection:**
-- Connection String: `postgresql://neondb_owner:npg_7LJM9ruywBQc@ep-wispy-poetry-ah9dq3xi-pooler.c-3.us-east-1.aws.neon.tech/neondb?sslmode=require&channel_binding=require`
+- Connection String: 
 - Pooler: Enabled (recommended for serverless)
 - SSL: Required
 
