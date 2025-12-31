@@ -35,8 +35,8 @@
 ### High Priority - Test Live Site (15 minutes)
 1. **Visit deployed site**: https://vikasbhatia.info/ai-transformation
 2. **Test each landing page**:
-   - /tampa-handyman
-   - /tampa-av
+   - /tampa-smarthome
+   - /tampa-techguard
    - /tampa-pool
    - /tampa-garage
 3. **Submit test lead** on one page (use real email to verify database insert)
@@ -120,7 +120,7 @@
 
 ### Landing Pages
 - [x] Create `HandymanLanding.tsx` → SmartHome Tampa
-- [x] Create `AVLanding.tsx` → TechEase Elite
+- [x] Create `AVLanding.tsx` → TechGuard Tampa
 - [x] Create `PoolLanding.tsx` → AquaTech Automation
 - [x] Create `GarageLanding.tsx` → GarageTech Pro
 - [x] Create `AITransformationHub.tsx` (main overview page)
@@ -182,7 +182,7 @@
 ### SMS Keyword Routing
 - [ ] Configure SMS auto-responses
 - [ ] Set up SMART keyword (SmartHome Tampa)
-- [ ] Set up TECH keyword (TechEase Elite)
+- [ ] Set up TECH keyword (TechGuard Tampa)
 - [ ] Set up POOL keyword (AquaTech Automation)
 - [ ] Set up GARAGE keyword (GarageTech Pro)
 - [ ] Test all SMS flows

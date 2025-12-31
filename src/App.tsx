@@ -35,8 +35,8 @@ function App() {
       <Route path="/ai-transformation" element={<AITransformationHub />} />
 
       {/* Tampa Service Landing Pages */}
-      <Route path="/tampa-handyman" element={<HandymanLanding />} />
-      <Route path="/tampa-av" element={<AVLanding />} />
+      <Route path="/tampa-smarthome" element={<HandymanLanding />} />
+      <Route path="/tampa-techguard" element={<AVLanding />} />
       <Route path="/tampa-pool" element={<PoolLanding />} />
       <Route path="/tampa-garage" element={<GarageLanding />} />
 

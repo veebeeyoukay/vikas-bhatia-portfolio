@@ -231,8 +231,8 @@ const response = await fetch('/.netlify/functions/lead-webhook', {
 - `src/pages/landing/GarageLanding.tsx`
 
 **Route Configuration:**
-- `/tampa-handyman`
-- `/tampa-av`
+- `/tampa-smarthome`
+- `/tampa-techguard`
 - `/tampa-pool`
 - `/tampa-garage`
 

@@ -24,8 +24,8 @@ This is the central hub that explains:
 - Business value proposition
 
 ### Service Landing Pages (now linked from hub)
-1. `/tampa-handyman` - Tampa Home Fix
-2. `/tampa-av` - TechEase Tampa
+1. `/tampa-smarthome` - Tampa Home Fix
+2. `/tampa-techguard` - TechEase Tampa
 3. `/tampa-pool` - ClearWater Pool Care
 4. `/tampa-garage` - GarageRescue Tampa
 
@@ -159,7 +159,7 @@ npm run dev
 http://localhost:5173/ai-transformation
 
 # Navigate to any service
-http://localhost:5173/tampa-handyman
+http://localhost:5173/tampa-smarthome
 # (notice the breadcrumb at top)
 
 # Check navbar
@@ -192,8 +192,8 @@ Main Portfolio Site
 │   └── AI Transformation Demo (featured)
 ├── Navbar → AI Transform
 │   └── /ai-transformation (HUB)
-│       ├── /tampa-handyman
-│       ├── /tampa-av
+│       ├── /tampa-smarthome
+│       ├── /tampa-techguard
 │       ├── /tampa-pool
 │       └── /tampa-garage
 └── Other pages (War Room, VikasGPT, etc.)

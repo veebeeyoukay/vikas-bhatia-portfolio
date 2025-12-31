@@ -73,7 +73,7 @@ export const businessConfigs: Record<string, BusinessConfig> = {
 
   av: {
     type: 'av',
-    name: 'TechEase Elite',
+    name: 'TechGuard Tampa',
     tagline: 'Premium Home Technology Solutions',
     description: 'White-glove technology services for busy professionals. Enterprise-grade home networks, digital safety, and seamless entertainment - handled completely for you.',
     heroImage: '/images/av-hero.jpg',

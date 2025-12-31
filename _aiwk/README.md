@@ -27,13 +27,13 @@ A fully functional demonstration platform that shows how AI can transform premiu
 ## Four Service Businesses
 
 ### 1. SmartHome Tampa
-**URL:** /tampa-handyman
+**URL:** /tampa-smarthome
 **Focus:** Premium smart home automation
 **Services:** Whole-home automation, smart security, voice control, climate control
 **Price Range:** $800-2500 (+ $200-500/month concierge)
 
-### 2. TechEase Elite
-**URL:** /tampa-av
+### 2. TechGuard Tampa
+**URL:** /tampa-techguard
 **Focus:** Enterprise home networks & digital safety
 **Services:** Commercial-grade WiFi, parental controls, home office setup, network security
 **Price Range:** $1200-3500 (+ $300-800/month support)
@@ -95,7 +95,7 @@ _aiwk/
     ├── ai-powered-bus-transformation.md  # Full PRD
     └── business_files/
         ├── HANDYMAN_BRIEF.md             # SmartHome Tampa brief
-        ├── AV_BRIEF.md                   # TechEase Elite brief
+        ├── AV_BRIEF.md                   # TechGuard Tampa brief
         ├── POOL_BRIEF.md                 # AquaTech Automation brief
         └── GARAGE_BRIEF.md               # GarageTech Pro brief
 ```

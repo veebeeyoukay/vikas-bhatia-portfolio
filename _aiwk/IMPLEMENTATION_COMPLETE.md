@@ -42,8 +42,8 @@ I've successfully implemented **Phase 1 (Foundation & Database)** and **Phase 2 
 ### 🎨 Frontend (4 Landing Pages)
 
 **Pages Created:**
-1. `/tampa-handyman` - Tampa Home Fix (handyman services)
-2. `/tampa-av` - TechEase Tampa (AV/tech services)
+1. `/tampa-smarthome` - Tampa Home Fix (handyman services)
+2. `/tampa-techguard` - TechEase Tampa (AV/tech services)
 3. `/tampa-pool` - ClearWater Pool Care (pool maintenance)
 4. `/tampa-garage` - GarageRescue Tampa (garage organization)
 
@@ -139,7 +139,7 @@ I've successfully implemented **Phase 1 (Foundation & Database)** and **Phase 2 
 **1. Test Landing Pages:**
 ```bash
 npm run dev
-# Visit http://localhost:5173/tampa-handyman (and other pages)
+# Visit http://localhost:5173/tampa-smarthome (and other pages)
 ```
 
 **2. Test Netlify Functions:**

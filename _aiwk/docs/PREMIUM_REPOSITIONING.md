@@ -35,7 +35,7 @@ All four service businesses have been repositioned from **physical labor service
 
 ---
 
-### 2. TechEase Elite (formerly TechEase Tampa)
+### 2. TechGuard Tampa (formerly TechEase Tampa)
 **Position:** Premium Home Technology Solutions
 
 **Old Focus:** TV mounting, basic WiFi, tech support
@@ -249,8 +249,8 @@ Test locally:
 npm run dev
 
 # Visit each page:
-http://localhost:5173/tampa-handyman  # SmartHome Tampa
-http://localhost:5173/tampa-av        # TechEase Elite
+http://localhost:5173/tampa-smarthome  # SmartHome Tampa
+http://localhost:5173/tampa-techguard        # TechGuard Tampa
 http://localhost:5173/tampa-pool      # AquaTech Automation
 http://localhost:5173/tampa-garage    # GarageTech Pro
 http://localhost:5173/ai-transformation # Main hub

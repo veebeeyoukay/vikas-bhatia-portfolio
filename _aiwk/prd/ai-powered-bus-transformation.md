@@ -34,8 +34,8 @@ Build a multi-business lead generation platform to capture inbound leads for fou
 │                           INBOUND CHANNELS                                   │
 ├─────────────────────────────────────────────────────────────────────────────┤
 │  Landing Pages          Phone/SMS              WhatsApp                      │
-│  /tampa-handyman        Lindy.ai Number        Lindy.ai Integration          │
-│  /tampa-av              (single number)        (same number)                 │
+│  /tampa-smarthome        Lindy.ai Number        Lindy.ai Integration          │
+│  /tampa-techguard              (single number)        (same number)                 │
 │  /tampa-pool                                                                 │
 │  /tampa-garage                                                               │
 └─────────────────────────────────────────────────────────────────────────────┘
@@ -1244,8 +1244,8 @@ import PoolLanding from './pages/landing/PoolLanding';
 import GarageLanding from './pages/landing/GarageLanding';
 
 // Add these routes to your existing Routes
-<Route path="/tampa-handyman" element={<HandymanLanding />} />
-<Route path="/tampa-av" element={<AVLanding />} />
+<Route path="/tampa-smarthome" element={<HandymanLanding />} />
+<Route path="/tampa-techguard" element={<AVLanding />} />
 <Route path="/tampa-pool" element={<PoolLanding />} />
 <Route path="/tampa-garage" element={<GarageLanding />} />
 ```

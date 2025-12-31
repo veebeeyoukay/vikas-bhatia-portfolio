@@ -16,8 +16,8 @@ A complete demonstration platform showing how AI can transform premium service b
 
 ### Four Premium Service Businesses
 
-1. **SmartHome Tampa** - Premium smart home automation (`/tampa-handyman`)
-2. **TechEase Elite** - Enterprise home networks & digital safety (`/tampa-av`)
+1. **SmartHome Tampa** - Premium smart home automation (`/tampa-smarthome`)
+2. **TechGuard Tampa** - Enterprise home networks & digital safety (`/tampa-techguard`)
 3. **AquaTech Automation** - Smart pool automation systems (`/tampa-pool`)
 4. **GarageTech Pro** - Smart garage & home inventory (`/tampa-garage`)
 
@@ -192,8 +192,8 @@ netlify deploy --prod
 ## 📊 AI Transformation Routes
 
 - `/ai-transformation` - Main hub and project overview
-- `/tampa-handyman` - SmartHome Tampa (smart home automation)
-- `/tampa-av` - TechEase Elite (enterprise networks & digital safety)
+- `/tampa-smarthome` - SmartHome Tampa (smart home automation)
+- `/tampa-techguard` - TechGuard Tampa (enterprise networks & digital safety)
 - `/tampa-pool` - AquaTech Automation (smart pool systems)
 - `/tampa-garage` - GarageTech Pro (smart garage & inventory)
 

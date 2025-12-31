@@ -47,8 +47,8 @@
 - `src/hooks/useLeadSubmission.ts` - Lead form submission logic
 
 **Routes Added:**
-- `/tampa-handyman` - Handyman services
-- `/tampa-av` - AV/Tech services
+- `/tampa-smarthome` - Handyman services
+- `/tampa-techguard` - AV/Tech services
 - `/tampa-pool` - Pool care services
 - `/tampa-garage` - Garage organization
 
@@ -155,8 +155,8 @@ npm run dev
 ```
 
 Then visit:
-- http://localhost:5173/tampa-handyman
-- http://localhost:5173/tampa-av
+- http://localhost:5173/tampa-smarthome
+- http://localhost:5173/tampa-techguard
 - http://localhost:5173/tampa-pool
 - http://localhost:5173/tampa-garage
 

@@ -108,8 +108,8 @@ Build a multi-business lead generation platform with:
 ## Routes
 
 **Landing Pages:**
-- `/tampa-handyman`
-- `/tampa-av`
+- `/tampa-smarthome`
+- `/tampa-techguard`
 - `/tampa-pool`
 - `/tampa-garage`
 

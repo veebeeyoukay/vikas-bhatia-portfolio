@@ -9,13 +9,13 @@ const AITransformationHub: React.FC = () => {
   const businesses = [
     {
       ...businessConfigs.handyman,
-      path: '/tampa-handyman',
+      path: '/tampa-smarthome',
       icon: '🏠',
       tagline: 'Smart Home Integration'
     },
     {
       ...businessConfigs.av,
-      path: '/tampa-av',
+      path: '/tampa-techguard',
       icon: '🔐',
       tagline: 'Premium Tech Solutions'
     },

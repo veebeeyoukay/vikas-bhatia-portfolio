@@ -4,8 +4,8 @@ AI-powered lead generation platform for four virtual service businesses in Tampa
 
 ## Businesses
 
-1. **Tampa Home Fix** - Handyman services at `/tampa-handyman`
-2. **TechEase Tampa** - AV/Tech services at `/tampa-av`
+1. **Tampa Home Fix** - Handyman services at `/tampa-smarthome`
+2. **TechEase Tampa** - AV/Tech services at `/tampa-techguard`
 3. **ClearWater Pool Care** - Pool maintenance at `/tampa-pool`
 4. **GarageRescue Tampa** - Garage organization at `/tampa-garage`
 
@@ -40,8 +40,8 @@ Run the SQL migrations in your Neon database:
 npm run dev
 
 # Visit landing pages
-http://localhost:5173/tampa-handyman
-http://localhost:5173/tampa-av
+http://localhost:5173/tampa-smarthome
+http://localhost:5173/tampa-techguard
 http://localhost:5173/tampa-pool
 http://localhost:5173/tampa-garage
 ```
